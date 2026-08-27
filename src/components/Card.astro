@@ -1,0 +1,149 @@
+---
+// src/components/Card.astro
+
+export interface Props {
+  title: string;
+  description?: string;
+  imageSrc: string;
+  imageAlt: string;
+  linkHref: string;
+  linkText?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+}
+
+const {
+  title,
+  description,
+  imageSrc,
+  imageAlt,
+  linkHref,
+  linkText = "Learn More →",
+  imageWidth = 400,
+  imageHeight = 250,
+} = Astro.props;
+---
+
+<a href={linkHref} class="card-link">
+  <article class="card">
+    <div class="card-image-wrapper">
+      <img 
+        src={imageSrc} 
+        alt={imageAlt} 
+        width={imageWidth} 
+        height={imageHeight}
+        loading="lazy"
+      />
+    </div>
+    <div class="card-content">
+      <h3 class="card-title">{title}</h3>
+      {description && <p class="card-description">{description}</p>}
+      <span class="card-link-text">{linkText}</span>
+    </div>
+  </article>
+</a>
+
+<style>
+  /* === CARD STYLES === */
+  
+    .card-link {
+        text-decoration: none;
+        color: inherit;
+        display: block;
+    }
+
+    .card {
+        background: var(--color-background-primary);
+        border: 2px solid var(--color-primary);
+        border-radius: 1.5rem;
+        overflow: hidden;
+        /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); */
+        box-shadow: 0 4px 0 var(--color-primary);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card:hover {
+        transform: translateY(-2px);
+        /* box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); */
+        box-shadow: 0 6px 0 var(--color-primary);
+    }
+
+    .card:active {
+        transform: translateY(2px);
+        box-shadow: 0 2px 0 var(--color-primary);
+        transition-duration: 100ms;
+    }
+
+    .card-image-wrapper {
+        position: relative;
+        overflow: hidden;
+        background: var(--color-background-secondary);
+    }
+
+    .card-image-wrapper img {
+        width: 100%;
+        height: auto;
+        display: block;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover .card-image-wrapper img {
+        transform: scale(1.03);
+    }
+
+    .card-content {
+        padding: 1.5rem;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .card-title {
+        /* font-size: 1rem; */
+        /* font-weight: 600; */
+        margin: 0 0 0.5rem 0;
+        /* color: var(--color-text-primary); */
+        line-height: 1.5;
+    }
+
+    .card-description {
+        font-size: 1rem;
+        color: var(--color-text-primary);
+        margin: 0 0 1rem 0;
+        line-height: 1.5;
+        flex: 1;
+    }
+
+    .card-link-text {
+        display: inline-block;
+        font-weight: 600;
+        color: var(--color-link);
+        font-size: 1rem;
+        margin-top: auto;
+        transition: color 0.2s ease;
+    }
+
+    .card:hover .card-link-text {
+        color: var(--color-link-hover);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 480px) {
+        .card-content {
+        padding: 1rem;
+        }
+        
+        .card-title {
+        font-size: 1.5rem;
+        }
+        
+        .card-description {
+        font-size: 1rem;
+        }
+    }
+</style>

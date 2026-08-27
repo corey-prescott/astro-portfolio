@@ -1,71 +1,68 @@
 ---
 // src/pages/index.astro
 import Layout from "../layouts/Layout.astro";
+import CTAButton from "../components/CTAButton.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Home | Corey Prescott">
-  <!-- === REPLACE EVERYTHING BELOW with your actual content === -->
-  
-  <!-- Hero Section -->
+  <!-- Hero section -->
   <section class="hero">
     <div class="hero-content">
       <h1>Corey Prescott</h1>
       <h2>Product Designer</h2>
-      <a href="/work" class="cta">See my work</a>
+      <CTAButton text="View my work" href="/work" size="md" />
+      <CTAButton text="View my work" href="/work" size="md" variant="outline" />
     </div>
   </section>
 
-  <!-- About Preview Section -->
+  <!-- About preview section -->
   <section class="about-preview">
     <h2>About me</h2>
     <p>I care about designing experiences people can trust, where the information they need is upfront, not buried. I've been designing for the web for over 14 years, with the last 4 focused on product and UX. Much of that time has been spent working closely with development, figuring out where the real edges of an idea are and pushing a little past them.</p>
     <a href="/about">Learn more →</a>
   </section>
 
-  <!-- Work Preview Section -->
-  <section class="work-preview">
-    <h2>Featured projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <img src="/images/project-1.jpg" alt="Project 1" />
-        <h3>Optimizing flight search results for a modern shopping experience</h3>
-        <p>Brief description</p>
-        <a href="/work/flight-search" class="card-link">Case study →</a>
-      </div>
+  <!-- Case studies section -->
+  <section class="case-studies-preview">
+    <h2>Case studies</h2>
+    <div class="card-grid">
+    <!-- Card 1 -->
+    <Card
+        title="Flight search results"
+        description="Optimizing flight search results for a modern shopping experience"
+        imageSrc="../assets/images/case-studies/flight-search-results/flight-search-results-card.png"
+        imageAlt="Flight search mockup"
+        linkHref="/work/flight-search-results"
+        linkText="Read the case study →"
+    />
 
-      <div class="project-card">
-        <img src="/images/project-2.jpg" alt="Project 2" />
-        <h3>No surprises: Designing a transparent hotel booking flow</h3>
-        <p>Brief description</p>
-        <a href="/work/hotel-booking" class="card-link">Case study →</a>
-      </div>
-
-      <div class="project-card">
-        <img src="/images/project-3.jpg" alt="Project 3" />
-        <h3>Some bullshit about checkout being better without Matt Molloy</h3>
-        <p>Brief description</p>
-        <a href="/work/checkout-flow" class="card-link">Case study →</a>
-      </div>
+    <!-- Card 2 -->
+    <Card
+        title="Hotel booking flow"
+        description="No surprises: Designing a transparent hotel booking flow"
+        imageSrc="../assets/images/case-studies/hotel-booking-flow/hotel-booking-flow-card.png"
+        imageAlt="Hotel booking mockup"
+        linkHref="/work/hotel-booking-flow"
+        linkText="Read the case study →"
+    />
     </div>
-    <a href="/work" class="view-all">View all work →</a>
   </section>
 </Layout>
 
 <style>
-  /* === MOBILE-FIRST STYLES (matches your screenshot) === */
-  
-  /* Reset and Base */
+  /* Reset and base */
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
 
-  /* Hero Section */
+  /* Hero section */
   .hero {
     padding: 2rem 1.5rem;
     text-align: left;
-    background: #f8f9fa; /* Replace with your color */
+    background: var(--color-background-secondary);
     height: 66vh;
     max-height: 500px;
     display: flex;
@@ -79,7 +76,7 @@ import Layout from "../layouts/Layout.astro";
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 0.5rem;
-    color: var(--text);
+    color: var(--color-text-primary);
   }
 
   .hero h2 {
@@ -88,14 +85,14 @@ import Layout from "../layouts/Layout.astro";
 
   .hero p {
     font-size: 1.2rem;
-    color: var(--text);
+    color: var(--color-text-primary);
     margin-bottom: 1.5rem;
   }
 
   .cta {
     display: inline-block;
     background: var(--color-primary);
-    color: var(--text);
+    color: var(--color-text-primary);
     padding: 0.8rem 2rem;
     border-radius: 8px;
     text-decoration: none;
@@ -108,11 +105,11 @@ import Layout from "../layouts/Layout.astro";
     border-radius: 12px;
   }
 
-  /* About Preview */
-  .about-preview {
-    padding: 3rem 1.5rem;
+  /* About preview */
+  .about-preview, .case-studies-preview {
+    padding: 3rem 1rem;
     text-align: left;
-    background: white;
+    background: var(--color-white);
   }
 
   .about-preview h2 {
@@ -121,67 +118,31 @@ import Layout from "../layouts/Layout.astro";
   }
 
   .about-preview p {
-    color: var(--text);
+    color: var(--color-text-primary);
     margin-bottom: 1rem;
   }
 
   .about-preview a {
-    color: #0070f3;
+    color: var(--color-link);
     text-decoration: none;
     font-weight: 600;
-  }
-
-  /* Work Preview */
-  .work-preview {
-    padding: 3rem 1.5rem;
-    background: #f8f9fa;
-    text-align: left;
-  }
-
-  .work-preview h2 {
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-  }
-
-  .project-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-
-  .project-card {
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 1rem;
-    text-align: left;
-  }
-
-  .project-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 8px;
-  }
-
-  .project-card h3 {
-    margin: 0.5rem 0;
-  }
-
-  .project-card p {
-    color: var(--text);
-    font-size: 0.9rem;
   }
 
   .view-all {
-    color: #0070f3;
+    color: var(--color-link);
     text-decoration: none;
     font-weight: 600;
   }
 
-  /* === Tablet and Desktop (min-width: 768px) === */
+  /* Card component */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+
+  /* === Tablet and desktop (min-width: 768px) === */
   @media (min-width: 768px) {
     .hero {
       flex-direction: row;
@@ -207,17 +168,13 @@ import Layout from "../layouts/Layout.astro";
       grid-template-columns: repeat(2, 1fr);
     }
 
-    .about-preview, .work-preview {
+    .about-preview, .case-studies-preview {
       padding: 4rem 3rem;
     }
   }
 
   /* === Desktop (min-width: 1024px) === */
   @media (min-width: 1024px) {
-    .project-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-
     .hero {
       padding: 6rem 4rem;
     }
