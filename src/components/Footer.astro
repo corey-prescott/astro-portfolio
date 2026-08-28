@@ -1,0 +1,210 @@
+---
+export interface Props {
+  showSocial?: boolean;
+  showLinks?: boolean;
+}
+
+const { showSocial = true, showLinks = true } = Astro.props;
+
+const currentYear = new Date().getFullYear();
+
+// Social links
+const socialLinks = [
+  {
+    name: "LinkedIn",
+    url: "https://linkedin.com/in/corey-prescott",
+    icon: "in",
+  },
+];
+
+// Quick links
+const quickLinks = [
+  { name: "Home", url: "/" },
+  { name: "Work", url: "/work" },
+  { name: "About", url: "/about" },
+];
+---
+
+<footer class="footer">
+  <div class="footer-content">
+    <!-- Column 1: Brand -->
+    <div class="footer-column footer-brand">
+      <h3 class="footer-logo">Corey Prescott</h3>
+      <p class="footer-tagline">Product Designer</p>
+      <p class="footer-copyright">&copy; {currentYear} Your Name. All rights reserved.</p>
+    </div>
+
+    <!-- Column 2: Quick Links -->
+    {showLinks && (
+      <div class="footer-column footer-links">
+        <h4 class="footer-heading">Explore</h4>
+        <ul class="footer-link-list">
+          {quickLinks.map((link) => (
+            <li>
+              <a href={link.url}>{link.name}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+
+    <!-- Column 3: Social -->
+    {showSocial && (
+      <div class="footer-column footer-social">
+        <h4 class="footer-heading">Connect</h4>
+        <ul class="footer-social-list">
+          {socialLinks.map((social) => (
+            <li>
+              <a 
+                href={social.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="social-link"
+                aria-label={`Visit my ${social.name} profile`}
+              >
+                <span class="social-icon">{social.icon}</span>
+                {social.name}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+  </div>
+</footer>
+
+<style>
+  /* === FOOTER STYLES === */
+  .footer {
+    background: var(--color-background-alt, #f7f7f7);
+    border-top: 1px solid var(--color-border, #e6e6e6);
+    padding: 3rem 1.5rem 2rem;
+    margin-top: 4rem;
+  }
+
+  .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  /* === Column Styles === */
+  .footer-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-brand {
+    gap: 0.25rem;
+  }
+
+  .footer-logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-text-primary, #1a1a1a);
+  }
+
+  .footer-tagline {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary, #666);
+    margin: 0;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+    color: var(--color-text-tertiary, #999);
+    margin-top: 0.5rem;
+  }
+
+  /* === Headings === */
+  .footer-heading {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary, #666);
+    margin: 0 0 0.75rem 0;
+  }
+
+  /* === Link Lists === */
+  .footer-link-list,
+  .footer-social-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .footer-link-list a,
+  .footer-social-list a {
+    text-decoration: none;
+    color: var(--color-text-secondary, #666);
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+
+  .footer-link-list a:hover,
+  .footer-social-list a:hover {
+    color: var(--color-primary, #0055ff);
+  }
+
+  /* === Social Links === */
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--color-primary, #0055ff);
+    color: white;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+
+  .social-link:hover .social-icon {
+    background: var(--color-primary-hover, #003dcc);
+    transform: scale(1.05);
+  }
+
+  /* === Responsive === */
+  @media (max-width: 768px) {
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      text-align: center;
+    }
+
+    .footer-column {
+      align-items: center;
+    }
+
+    .footer-link-list,
+    .footer-social-list {
+      align-items: center;
+    }
+
+    .social-link {
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .footer {
+      padding: 2rem 1rem 1.5rem;
+      margin-top: 3rem;
+    }
+  }
+</style>
