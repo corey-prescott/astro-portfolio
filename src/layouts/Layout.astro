@@ -1,11 +1,16 @@
 ---
 import "../styles/global.css";  // ← GLOBAL styles here
 
+// Components
+import Nav from "../components/Nav.astro";
+
 export interface Props {
   title: string;
   description?: string;
+  activePage?: "home" | "work" | "about";
 }
-const { title, description } = Astro.props;
+
+const { title, description, activePage = "home" } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -27,10 +32,8 @@ const { title, description } = Astro.props;
     />
   </head>
   <body>
-    <nav>
-      <a href="/">Home</a>
-      <a href="/work">Work</a>
-    </nav>
+    <!-- Nav -->
+    <Nav activePage={activePage} />
 
     <main>
       <slot />  {/* Page content goes here */}
