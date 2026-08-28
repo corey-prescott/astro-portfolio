@@ -4,12 +4,10 @@
 export interface Props {
   title: string;
   description?: string;
-  imageSrc: string;
+  imageSrc: string | { src: string; width?: number; height?: number };
   imageAlt: string;
   linkHref: string;
   linkText?: string;
-  imageWidth?: number;
-  imageHeight?: number;
 }
 
 const {
@@ -18,20 +16,19 @@ const {
   imageSrc,
   imageAlt,
   linkHref,
-  linkText = "Learn More →",
-  imageWidth = 400,
-  imageHeight = 250,
+  linkText = "View case study →",
 } = Astro.props;
+
+// Normalize the image source
+const imageUrl = typeof imageSrc === 'string' ? imageSrc : imageSrc.src;
 ---
 
 <a href={linkHref} class="card-link">
   <article class="card">
     <div class="card-image-wrapper">
       <img 
-        src={imageSrc} 
-        alt={imageAlt} 
-        width={imageWidth} 
-        height={imageHeight}
+        src={imageUrl}
+        alt={imageAlt}
         loading="lazy"
       />
     </div>
@@ -78,6 +75,7 @@ const {
     }
 
     .card-image-wrapper {
+        padding: 1.5rem;
         position: relative;
         overflow: hidden;
         background: var(--color-background-secondary);
@@ -92,9 +90,9 @@ const {
         transition: transform 0.3s ease;
     }
 
-    .card:hover .card-image-wrapper img {
+    /* .card:hover .card-image-wrapper img {
         transform: scale(1.03);
-    }
+    } */
 
     .card-content {
         padding: 1.5rem;
