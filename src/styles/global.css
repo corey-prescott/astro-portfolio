@@ -27,7 +27,7 @@
     --color-text-inverse: var(--color-white);
     
     --color-background-primary: var(--color-white);
-    --color-background-secondary: #EEF0F0;
+    --color-background-secondary: #F9FAFA;
     --color-background-accent: var(--color-primary-light);
     
     --color-border: var(--color-gray-200);
@@ -90,38 +90,46 @@ body {
 /*  Type  */
 h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-primary);
-  font-family: var(--font-heading);
-  font-weight: 700;
-  line-height: 1.2;
-  /* margin-bottom: var(--spacing-md); */
-  /* text-decoration: underline;
-  text-decoration-skip-ink: none;
-  text-underline-offset: 0;
-  text-decoration-color: var(--color-secondary);
+    font-family: var(--font-heading);
+    line-height: 1.2;
+    /* margin-bottom: var(--spacing-md); */
+    /* text-decoration: underline;
+    text-decoration-skip-ink: none;
+    text-underline-offset: 0;
+    text-decoration-color: var(--color-secondary);
   text-decoration-thickness: 0.125em; */
 }
 
 h1 { 
     font-size: var(--font-size-3xl); 
+    font-weight: 700;
     margin: 0.5rem 0 1rem 0;
 }
 
 h2 { 
     font-size: var(--font-size-2xl); 
+    font-weight: 600;
     margin: 0.5rem 0 1rem 0;
 }
 
 h3 { 
     font-size: var(--font-size-xl); 
+    font-weight: 500;
     margin: 0.5rem 0 1rem 0;
 }
 
 h4 { 
     font-size: var(--font-size-lg); 
+    font-weight: 500;
     margin: 0.5rem 0 1rem 0;
 }
 
+strong {
+    font-weight: 500;
+}
+
 p {
+    font-weight: 300;
   margin-bottom: 1em;
   line-height: 1.5;
 }

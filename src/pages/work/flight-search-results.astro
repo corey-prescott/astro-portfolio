@@ -51,10 +51,10 @@ const tocHeadings = [
 
             <div class="case-study-content">
                 <!-- Project overview -->
-                <section class="project-overview" aria-labelledby="project-overview">
+                <section class="project-overview" id="project-overview" aria-labelledby="project-overview-heading">
                     <div class="section-body">
                         <div class="section-body-text">
-                            <h2 class="section-header" id="project-overview">Project overview</h2>
+                            <h2 class="section-header" id="project-overview-heading">Project overview</h2>
                             <h3>Redesign the flight search results within the existing search results page</h3>
                             <p>The way we receive and display flight data is being changed due to updated airline contracts and distribution systems. This change prompted us to take a look into modernizing our results as a whole. This update would also include a much needed improvement to our mobile experience. Updating the filters would not be a part of this project.</p>
                         </div>
@@ -92,19 +92,42 @@ const tocHeadings = [
                 </section>
 
                 <!-- The need for a redesign -->
-                <section class="the-need-for-a-redesign" aria-labelledby="the-need-for-a-redesign">
-                    <h2 class="section-header" id="the-need-for-a-redesign">The need for a redesign</h2>
-
+                <section class="the-need-for-a-redesign" id="the-need-for-a-redesign" aria-labelledby="the-need-for-a-redesign-heading">
                     <div class="section-body">
                         <div class="section-body-text">
+                            <h2 class="section-header" id="the-need-for-a-redesign-heading">The need for a redesign</h2>
+
                             <h3>Business and user needs</h3>
-                            <p>Multiple distinguished <strong>cabin types</strong></p>
-                            <p>Call out specific <strong>student rates</strong></p>
-                            <p><strong>Our value</strong> should be easy to see</p>
-                            <p><strong>Amenities</strong> are clear at each price point</p>
-                            <p><strong>Mobile</strong> is not user-friendly or accessible</p>
-                            <p><strong>Easy to compare</strong> to other sites</p>
-                            <p><strong>Marketing and promotions</strong> play a major role in sales</p>
+
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <p>Multiple distinguished <strong>cabin types</strong></p>
+                                </div>
+
+                                <div class="feature-item">
+                                    <p>Call out specific <strong>student rates</strong></p>
+                                </div>
+
+                                <div class="feature-item">
+                                    <p><strong>Our value</strong> should be easy to see</p>
+                                </div>
+
+                                <div class="feature-item">
+                                    <p><strong>Amenities</strong> are clear at each price point</p>
+                                </div>
+
+                                <div class="feature-item">
+                                    <p><strong>Mobile</strong> is not user-friendly or accessible</p>
+                                </div>
+
+                                <div class="feature-item">
+                                    <p><strong>Easy to compare</strong> to other sites</p>
+                                </div>
+
+                                <div class="feature-item">
+                                    <p><strong>Marketing and promotions</strong> play a major role in sales</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="section-body-image">
@@ -119,8 +142,8 @@ const tocHeadings = [
                 </section>
 
                 <!-- Solution -->
-                <section class="solution" aria-labelledby="solution">
-                    <h2 class="section-header" id="solution">Solution</h2>
+                <section class="solution" id="solution" aria-labelledby="solution-heading">
+                    <h2 class="section-header" id="solution-heading">Solution</h2>
 
                     <div class="section-body">
                         <div class="section-body-image">
@@ -142,11 +165,11 @@ const tocHeadings = [
                 </section>
 
                 <!-- Comparing results -->
-                <section class="comparing-results" aria-labelledby="comparing-results">
-                    <h2 class="section-header" id="comparing-results">Comparing results</h2>
-
+                <section class="comparing-results" id="comparing-results" aria-labelledby="comparing-results-heading">
                     <div class="section-body">
                         <div class="section-body-text">
+                            <h2 class="section-header" id="comparing-results-heading">Comparing results</h2>
+
                             <div class="feature-grid">
                                 <div class="feature-item">
                                     <h3>Itineraries</h3>
@@ -171,15 +194,15 @@ const tocHeadings = [
                         </div>
 
                         <div class="section-body-image">
-                            <figure class="image-figure">
+                            <!-- <figure class="image-figure">
                                 <div class="image-wrapper">
                                     <Image src={searchResultsDesktop} alt="Search results desktop" />
                                 </div>
                                 <figcaption>New desktop search results view</figcaption>
-                            </figure>
+                            </figure> -->
 
                             <figure class="image-figure">
-                                <div class="image-wrapper">
+                                <div class="image-wrapper mobile-screen">
                                     <Image src={searchResultsMobile} alt="Search results mobile" />
                                 </div>
                                 <figcaption>New mobile search results view</figcaption>
@@ -189,25 +212,29 @@ const tocHeadings = [
                 </section>
 
                 <!-- Exclusive pricing -->
-                <section class="exclusive-pricing" aria-labelledby="exclusive-pricing">
-                    <h2 class="section-header" id="exclusive-pricing">Exclusive pricing</h2>
-
+                <section class="exclusive-pricing" id="exclusive-pricing" aria-labelledby="exclusive-pricing-heading">
                     <div class="section-body">
                         <div class="section-body-text">
-                            <h3>Verify to view</h3>
-                            <p>Our best deals are locked behind verified student accounts. Any results locked behind this are wrapped up into a single result. These results are shown individually once logged in with a banner and member-colored prices. Exclusive deals had previously been unclear on a per-result basis, as they didn't have anything calling them out.</p>
+                            <h2 class="section-header" id="exclusive-pricing-heading">Exclusive pricing</h2>
+
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Verify to view</h3>
+                                    <p>Our best deals are locked behind verified student accounts. Any results locked behind this are wrapped up into a single result. These results are shown individually once logged in with a banner and member-colored prices. Exclusive deals had previously been unclear on a per-result basis, as they didn't have anything calling them out.</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="section-body-image">
                             <figure class="image-figure">
-                                <div class="image-wrapper">
+                                <div class="image-wrapper mobile-screen">
                                     <Image src={resultsV2VLoggedOut} alt="Verify to view results logged out" />
                                 </div>
                                 <figcaption>Logged out</figcaption>
                             </figure>
 
                             <figure class="image-figure">
-                                <div class="image-wrapper">
+                                <div class="image-wrapper mobile-screen">
                                     <Image src={resultsV2VLoggedIn} alt="Verify to view results logged in" />
                                 </div>
                                 <figcaption>Logged in</figcaption>
@@ -217,13 +244,17 @@ const tocHeadings = [
                 </section>
 
                 <!-- Flight details -->
-                <section class="flight-details" aria-labelledby="flight-details">
-                    <h2 class="section-header" id="flight-details">Flight details</h2>
-
+                <section class="flight-details" id="flight-details" aria-labelledby="flight-details-heading">
                     <div class="section-body">
                         <div class="section-body-text">
-                            <h3>Mobile-friendly</h3>
-                            <p>Flight details have been separated from fare selection and now show in a modal rather than expanding the result down vertically, often off screen. Because of the separation, the primary action is to move forward to fare select.</p>
+                            <h2 class="section-header" id="flight-details-heading">Flight details</h2>
+
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Mobile-friendly</h3>
+                                    <p>Flight details have been separated from fare selection and now show in a modal rather than expanding the result down vertically, often off screen. Because of the separation, the primary action is to move forward to fare select.</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="section-body-image">
@@ -235,14 +266,14 @@ const tocHeadings = [
                             </figure> -->
 
                             <figure class="image-figure">
-                                <div class="image-wrapper">
+                                <div class="image-wrapper mobile-screen">
                                     <Image src={itineraryMobile} alt="Itinerary mobile" />
                                 </div>
                                 <figcaption>One-way flight</figcaption>
                             </figure>
 
                             <figure class="image-figure">
-                                <div class="image-wrapper">
+                                <div class="image-wrapper mobile-screen">
                                     <Image src={itineraryRoundtripMobile} alt="Itinerary roudntrip mobile" />
                                 </div>
                                 <figcaption>Roundtrip flight</figcaption>
@@ -252,16 +283,20 @@ const tocHeadings = [
                 </section>
 
                 <!-- Fare select -->
-                <section class="fare-select" aria-labelledby="fare-select">
-                    <h2 class="section-header" id="fare-select">Fare select</h2>
-
+                <section class="fare-select" id="fare-select" aria-labelledby="fare-select-heading">
                     <div class="section-body">
                         <div class="section-body-text">
-                            <h3>Multiple options per cabin</h3>
-                            <p>The cabin type clicked within the result is anchored to, but all cabin types are available along with their airline specific terminology for comparison with the airline and other sites.</p>
+                            <h2 class="section-header" id="fare-select-heading">Fare select</h2>
 
-                            <h3>Compare amenities</h3>
-                            <p>Included amenities are clearly shown with symbols, color, and language to convey availability across all cabin types.</p>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Multiple options per cabin</h3>
+                                    <p>The cabin type clicked within the result is anchored to, but all cabin types are available along with their airline specific terminology for comparison with the airline and other sites.</p>
+
+                                    <h3>Compare amenities</h3>
+                                    <p>Included amenities are clearly shown with symbols, color, and language to convey availability across all cabin types.</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="section-body-image">
@@ -283,19 +318,27 @@ const tocHeadings = [
                 </section>
 
                 <!-- Results -->
-                <section class="results" aria-labelledby="results">
-                    <h2 class="section-header" id="results">Results</h2>
-
+                <section class="results" id="results" aria-labelledby="results-heading">
                     <div class="section-body">
                         <div class="section-body-text">
-                            <h3>Conversion and total bookings increased</h3>
-                            <p>Users who clicked through were ready to book.</p>
+                            <h2 class="section-header" id="results-heading">Results</h2>
 
-                            <h3>Fewer abandoned carts</h3>
-                            <p>Visible pricing upfront meant fewer surprises at checkout.</p>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Conversion and total bookings increased</h3>
+                                    <p>Users who clicked through were ready to book.</p>
+                                </div>
 
-                            <h3>Lower click-through rate, by design</h3>
-                            <p>Users weren't wasting time going back and forth to get the information they needed to make a decision.</p>
+                                <div class="feature-item">
+                                    <h3>Fewer abandoned carts</h3>
+                                    <p>Visible pricing upfront meant fewer surprises at checkout.</p>
+                                </div>
+
+                                <div class="feature-item">
+                                    <h3>Lower click-through rate, by design</h3>
+                                    <p>Users weren't wasting time going back and forth to get the information they needed to make a decision.</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -370,6 +413,9 @@ const tocHeadings = [
 
     .section-header {
         margin-bottom: 2rem;
+        margin-left: calc(-1 * var(--spacing-xs) - 4px);
+        padding-left: var(--spacing-xs);
+        border-left: 4px solid var(--color-secondary);
     }
 
     .section-body {
@@ -382,15 +428,24 @@ const tocHeadings = [
 
     }
 
+    .feature-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
+    }
+
     .feature-item {
-        margin-bottom: var(--spacing-md);
+        /* margin-bottom: var(--spacing-md); */
+    }
+
+    .feature-item p:last-of-type {
+        margin-bottom: 0;
     }
 
     .section-body-image {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
         gap: 2rem;
-        margin: 2rem 0;
         align-items: stretch;
     }
 
@@ -399,6 +454,7 @@ const tocHeadings = [
         display: flex;
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         overflow: hidden;
         height: 100%;
     }
@@ -418,6 +474,10 @@ const tocHeadings = [
         display: block;
     }
 
+    .mobile-screen {
+        max-width: 16rem;
+    }
+
     .image-figure figcaption {
         padding: 0.75rem 1rem;
         font-size: 0.875rem;
@@ -425,6 +485,12 @@ const tocHeadings = [
         text-align: center;
         flex-shrink: 0;
     }
+
+    /* Section specific styles */
+    .comparing-results .section-body-image {
+        grid-template-columns: 1fr;
+    }
+
 
     @media (min-width: 768px) {
         .main-content {
@@ -441,11 +507,18 @@ const tocHeadings = [
         .callout-grid {
             
         }
-
-        .section-body {
-            gap: 3rem;
+        
+        .section-header {
+            margin-left: calc(-1 * var(--spacing-sm) - 4px);
+            padding-left: var(--spacing-sm);
         }
 
+        .section-body {
+            gap: var(--spacing-lg);
+            align-items: center;
+        }
+
+        /* Section specific styles */
         .project-overview .section-body {
             grid-template-columns: 2fr 1fr;
         }
@@ -464,6 +537,10 @@ const tocHeadings = [
 
         .comparing-results .section-body {
             grid-template-columns: 2fr 1fr;
+        }
+
+        .comparing-results .feature-grid {
+            grid-template-columns: 1fr 1fr;
         }
 
         .exclusive-pricing .section-body {
