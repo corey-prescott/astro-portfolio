@@ -1,0 +1,149 @@
+---
+export interface Heading {
+  slug: string;
+  text: string;
+  depth: number;
+}
+
+export interface Props {
+  headings: Heading[];
+  title?: string;
+}
+
+const { headings, title = "On this page" } = Astro.props;
+---
+
+<nav class="toc" aria-label="Table of contents">
+  <ul class="toc-list">
+    {headings.map((heading) => (
+      <li class={`toc-item toc-depth-${heading.depth}`}>
+        <a href={`#${heading.slug}`} class="toc-link">
+          {heading.text}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .toc {
+    position: sticky;
+    top: 0;
+    align-self: start;
+    padding: 3rem 0;
+    background: transparent;
+    min-width: 200px;
+  }
+
+  .toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .toc-item {
+    font-size: 0.875rem;
+    line-height: 1.4;
+  }
+
+  .toc-depth-2 {
+    padding-left: 0;
+  }
+
+  .toc-depth-3 {
+    padding-left: 1rem;
+  }
+
+  .toc-depth-4 {
+    padding-left: 2rem;
+  }
+
+  .toc-link {
+    display: block;
+    padding: 0.25rem 0.5rem;
+    color: var(--color-text-secondary, #666);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
+  }
+
+  .toc-link:hover {
+    color: var(--color-text-primary, #1a1a1a);
+  }
+
+  .toc-link.active {
+    color: var(--color-primary);
+    border-left-color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .toc {
+      position: relative;
+      top: 0;
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .toc-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem 0.5rem;
+    }
+
+    .toc-item {
+      font-size: 0.8rem;
+    }
+
+    .toc-depth-3,
+    .toc-depth-4 {
+      padding-left: 0;
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll(".toc-link");
+    const sections = Array.from(links).map((link) => {
+      const href = link.getAttribute("href");
+      // Check if href exists and is a string
+      if (href) {
+        return document.querySelector(href);
+      }
+      return null;
+    });
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            links.forEach((link) => {
+              const href = link.getAttribute("href");
+              if (href === `#${id}`) {
+                link.classList.add("active");
+              } else {
+                link.classList.remove("active");
+              }
+            });
+          }
+        });
+      },
+      {
+        rootMargin: "0px 0px -40% 0px",
+        threshold: 0.1,
+      }
+    );
+
+    // Only observe sections that exist
+    sections.forEach((section) => {
+      if (section) observer.observe(section);
+    });
+  });
+</script>
