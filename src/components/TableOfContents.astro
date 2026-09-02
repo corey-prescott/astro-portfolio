@@ -45,8 +45,8 @@ const { headings, title = "On this page" } = Astro.props;
   }
 
   .toc-item {
-    font-size: 0.875rem;
-    line-height: 1.4;
+    font-size: var(--font-size-base);
+    line-height: 1;
   }
 
   .toc-depth-2 {
@@ -63,47 +63,49 @@ const { headings, title = "On this page" } = Astro.props;
 
   .toc-link {
     display: block;
-    padding: 0.25rem 0.5rem;
-    color: var(--color-text-secondary, #666);
+    padding: var(--spacing-xs);
+    color: var(--color-text-secondary);
+    font-weight: 300;
     text-decoration: none;
     transition: all 0.2s ease;
     border-left: 2px solid transparent;
   }
 
   .toc-link:hover {
-    color: var(--color-text-primary, #1a1a1a);
+    color: var(--color-text-primary);
   }
 
   .toc-link.active {
     color: var(--color-primary);
-    border-left-color: var(--color-primary);
+    border-left-color: var(--color-secondary);
     font-weight: 500;
   }
 
   /* Responsive */
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     .toc {
-      position: relative;
-      top: 0;
-      width: 100%;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
+        display: none;
+        /* position: relative;
+        top: 0;
+        width: 100%;
+        padding: 1rem;
+        margin-bottom: 1.5rem; */
     }
 
-    .toc-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.25rem 0.5rem;
+    /* .toc-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem 0.5rem;
     }
 
     .toc-item {
-      font-size: 0.8rem;
+        font-size: 0.8rem;
     }
 
     .toc-depth-3,
     .toc-depth-4 {
-      padding-left: 0;
-    }
+        padding-left: 0;
+    } */
   }
 </style>
 

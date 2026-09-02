@@ -308,7 +308,7 @@ const tocHeadings = [
                             </figure> -->
 
                             <figure class="image-figure">
-                                <div class="image-wrapper">
+                                <div class="image-wrapper mobile-screen">
                                     <Image src={fareSelectMobile} alt="Fare select mobile" />
                                 </div>
                                 <figcaption>Main cabin type chosen</figcaption>
@@ -518,9 +518,17 @@ const tocHeadings = [
             align-items: center;
         }
 
+        .section-body-text {
+            margin-bottom: var(--spacing-lg);
+        }
+
         /* Section specific styles */
         .project-overview .section-body {
             grid-template-columns: 2fr 1fr;
+        }
+
+        .project-overview .section-body-text {
+            margin-bottom: var(--spacing-md);
         }
 
         .the-need-for-a-redesign .section-body {
