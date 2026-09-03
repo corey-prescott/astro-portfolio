@@ -25,7 +25,7 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
   <!-- Case studies section -->
   <section class="case-studies-preview">
     <div class="case-studies-content">
-        <h2>Case studies</h2>
+        <h2 class="section-header">Case studies</h2>
         <div class="card-grid">
         <!-- Card 1 -->
         <Card
@@ -51,7 +51,7 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
   <!-- About preview section -->
   <section class="about-preview">
     <div class="about-content">
-        <h2>About me</h2>
+        <h2 class="section-header">About me</h2>
         <p>I've been designing for the web for over 14 years, with the last 4 focused on product and UX. Much of that time has been spent working closely with development, figuring out where the real edges of an idea are and pushing a little past them.</p>
         <a href="/about">Learn more →</a>
     </div>
@@ -61,7 +61,7 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
 <style>
   /* About preview */
   .case-studies-preview, .about-preview {
-    padding: 3rem 0;
+    padding: var(--spacing-lg) 0;
     text-align: left;
     background: var(--color-background-secondary);
     display: flex;
@@ -72,7 +72,7 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
 
   .case-studies-content, .about-content {
         max-width: 1200px;
-        margin: 0 1.5rem;
+        margin: 0 var(--spacing-md);
     }
 
   /* .about-preview h2 {
@@ -101,8 +101,8 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
   .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1.5rem 0;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
   }
 
   /* === Tablet and desktop (min-width: 768px) === */
@@ -112,14 +112,14 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
     }
 
     .case-studies-preview, .about-preview {
-      padding: 6rem 0;
+      padding: var(--spacing-2xl) 0;
       flex-direction: row;
       align-items: center;
     }
 
     .case-studies-content, .about-content {
         flex: 1;
-        margin: 0 3rem;
+        margin: 0 var(--spacing-lg);
     }
   }
 

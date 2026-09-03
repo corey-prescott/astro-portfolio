@@ -1,0 +1,174 @@
+.hero-text h1 {
+    margin-bottom: var(--spacing-xs);
+}
+
+.company-name {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+}
+
+.main-content {
+    text-align: left;
+    background: var(--color-background-secondary);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+.case-study-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 var(--spacing-md);
+    background: var(--color-background-secondary);
+}
+
+.case-study-content {
+    min-width: 0;
+}
+
+.case-study-content section {
+    padding: var(--spacing-lg) 0;
+}
+
+.case-study-sidebar {
+    position: relative;
+}
+
+.callout {
+    padding: var(--spacing-md);
+    background: var(--color-white);
+    border: 2px solid var(--color-primary);
+    border-radius: var(--radius-lg);
+}
+
+.callout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.callout-category {
+    
+}
+
+.callout-category h3 {
+
+}
+
+.callout-category ul {
+    list-style-type: none;
+    margin-top: var(--spacing-xs);
+    margin-bottom: var(--spacing-sm);
+    padding: 0;
+}
+
+.callout-category li {
+    margin-bottom: var(--spacing-2xs);
+}
+
+.section-body {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.section-body-text {
+
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md) var(--spacing-lg);
+}
+
+
+.feature-item p:last-of-type {
+    margin-bottom: 0;
+}
+
+.section-body-image {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: var(--spacing-md);
+    align-items: stretch;
+}
+
+.image-figure {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    height: 100%;
+}
+
+.image-figure .image-wrapper img,
+.image-figure .image-wrapper :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.mobile-screen {
+    max-width: 16rem;
+}
+
+.image-figure figcaption {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary, #666);
+    text-align: center;
+    flex-shrink: 0;
+}
+
+@media (min-width: 768px) {
+    .main-content {
+        flex-direction: row;
+        align-items: center;
+        padding: var(--spacing-lg) 0;
+    }
+
+    .case-study-layout {
+        gap: var(--spacing-lg);
+        margin: 0 var(--spacing-lg);
+    }
+
+    .callout-grid {
+        
+    }
+
+    .section-body {
+        gap: var(--spacing-lg);
+        align-items: center;
+    }
+
+    .section-body-text {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .section-body-image {
+        gap: 0;
+    }
+}
+
+@media (min-width: 1024px) {
+    .case-study-layout {
+        grid-template-columns: 220px 1fr;
+    }
+
+    .case-study-content > section:first-of-type {
+        padding-top: 2.5rem;
+    }
+}
+
+@media (min-width: 1920px) {
+    .case-study-content section {
+        padding: var(--spacing-xl) 0;
+    }
+}

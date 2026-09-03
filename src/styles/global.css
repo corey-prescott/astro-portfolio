@@ -50,14 +50,17 @@
     --font-size-lg: 1.125rem;
     --font-size-xl: 1.5rem;
     --font-size-2xl: 2rem;
-    --font-size-3xl: 3rem;
+    --font-size-3xl: 2.5rem;
+    --font-size-4xl: 3rem;
     
     /* Spacing */
+    --spacing-2xs: 0.25rem;
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 3rem;
-    --spacing-xl: 6rem;
+    --spacing-xl: 4rem;
+    --spacing-2xl: 6rem;
 
     /* Border radius */
     --radius-sm: 0.5rem;
@@ -76,9 +79,31 @@ html {
   scroll-padding-top: 3rem;
 }
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
 body {
     font-family: var(--font-body);
     font-size: var(--font-size-base);
+    line-height: 1;
     color: var(--text);
     background: var(--background);
     margin: 0;
@@ -92,6 +117,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--color-text-primary);
     font-family: var(--font-heading);
     line-height: 1.2;
+    text-wrap: balance;
     /* margin-bottom: var(--spacing-md); */
     /* text-decoration: underline;
     text-decoration-skip-ink: none;
@@ -130,8 +156,9 @@ strong {
 
 p {
     font-weight: 300;
-  margin-bottom: 1em;
-  line-height: 1.5;
+    margin-bottom: 1em;
+    line-height: 1.5;
+    text-wrap: pretty;
 }
 
 /*  Links  */
@@ -168,7 +195,7 @@ ul, ol {
 .hero {
     text-align: left;
     background: var(--color-background-primary);
-    padding: 4rem 0;
+    padding: var(--spacing-xl) 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -179,9 +206,9 @@ ul, ol {
 .hero-content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: var(--spacing-md);
     max-width: 1200px;
-    margin: 0 1.5rem;
+    margin: 0 var(--spacing-md);
 }
 
 .hero-text {
@@ -202,38 +229,49 @@ ul, ol {
   }
 
 .hero p {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-md);
 }
 
 .hero-image {
     max-width: 100%;
     height: auto;
-    border-radius: 12px;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+    margin-left: calc(-1 * var(--spacing-xs) - 4px);
+    padding-left: var(--spacing-xs);
+    border-left: 4px solid var(--color-secondary);
 }
 
  @media (min-width: 768px) {
+    h1 {
+        font-size: var(--font-size-4xl);
+    }
+
     .hero {
         flex-direction: row;
         text-align: left;
         align-items: center;
-        gap: 4rem;
-        padding: 6rem 0;
+        gap: var(--spacing-xl);
+        padding: var(--spacing-2xl) 0;
     }
 
     .hero-content {
         flex: 1;
-        gap: 1.5rem;
-        margin: 0 3rem;
+        gap: var(--spacing-md);
+        margin: 0 var(--spacing-lg);
     }
 
     .hero-image {
       flex: 1;
       max-width: 400px;
     }
-
-    /* .hero h1 {
-      font-size: 3.5rem;
-    } */
+        
+    .section-header {
+        margin-left: calc(-1 * var(--spacing-sm) - 4px);
+        padding-left: var(--spacing-sm);
+    }
   }
 
   /* === Desktop (min-width: 1024px) === */

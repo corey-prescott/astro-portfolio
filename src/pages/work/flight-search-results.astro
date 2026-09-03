@@ -1,16 +1,15 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import "../../styles/case-study.css";
 import TableOfContents from "../../components/TableOfContents.astro";
 import { Image } from "astro:assets";
 
 // images
-import flightSearchHero from "../../assets/case-studies/flight-search-results/flight-search-results-card.png";
+import flightSearchScreens from "../../assets/case-studies/flight-search-results/flight-screens.png";
 import searchResultsOld from "../../assets/case-studies/flight-search-results/search-results_desktop_old.png";
-import searchResultsDesktop from "../../assets/case-studies/flight-search-results/results_desktop.png";
-import searchResultsMobile from "../../assets/case-studies/flight-search-results/results_mobile.png";
-import fareSelectDesktop from "../../assets/case-studies/flight-search-results/fare-select_desktop.png";
+import searchResultsMobile from "../../assets/case-studies/flight-search-results/results_mobile.png"
 import fareSelectMobile from "../../assets/case-studies/flight-search-results/fare-select_mobile.png";
-import itineraryDesktop from "../../assets/case-studies/flight-search-results/itinerary_desktop.png";
+import fareSelectMobileMain from "../../assets/case-studies/flight-search-results/fare-select-main-cabin_mobile.png";
 import itineraryMobile from "../../assets/case-studies/flight-search-results/itinerary_mobile.png";
 import itineraryRoundtripMobile from "../../assets/case-studies/flight-search-results/itinerary-roundtrip_mobile.png";
 import resultsV2VLoggedIn from "../../assets/case-studies/flight-search-results/results-v2v-logged-in_mobile.png";
@@ -35,10 +34,11 @@ const tocHeadings = [
         <div class="hero-content">
             <div class="hero-text">
                 <h1>Optimizing flight search results for a modern shopping experience</h1>
+                <p class="company-name">StudentUniverse</p>
             </div>
 
             <div class="hero-image">
-                <Image src={flightSearchHero} alt="Hero" />
+                <Image src={flightSearchScreens} alt="Hero" />
             </div>
         </div>
     </section>
@@ -55,8 +55,12 @@ const tocHeadings = [
                     <div class="section-body">
                         <div class="section-body-text">
                             <h2 class="section-header" id="project-overview-heading">Project overview</h2>
-                            <h3>Redesign the flight search results within the existing search results page</h3>
-                            <p>The way we receive and display flight data is being changed due to updated airline contracts and distribution systems. This change prompted us to take a look into modernizing our results as a whole. This update would also include a much needed improvement to our mobile experience. Updating the filters would not be a part of this project.</p>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Redesign the flight search results within the existing search results page</h3>
+                                    <p>The way we receive and display flight data is being changed due to updated airline contracts and distribution systems. This change prompted us to take a look into modernizing our results as a whole. This update would also include a much needed improvement to our mobile experience. Updating the filters would not be a part of this project.</p>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="callout">
@@ -132,7 +136,7 @@ const tocHeadings = [
 
                         <div class="section-body-image">
                             <figure class="image-figure">
-                                <div class="image-wrapper">
+                                <div class="image-wrapper desktop-screen">
                                     <Image src={searchResultsOld} alt="Old fare select" />
                                 </div>
                                 <figcaption>Curent search results</figcaption>
@@ -148,17 +152,9 @@ const tocHeadings = [
                     <div class="section-body">
                         <div class="section-body-image">
                             <figure class="image-figure">
-                                <div class="image-wrapper">
-                                    <Image src={searchResultsDesktop} alt="Search results desktop" />
+                                <div class="image-wrapper desktop-screen">
+                                    <Image src={flightSearchScreens} alt="Flight search results" />
                                 </div>
-                                <figcaption>New desktop search results view</figcaption>
-                            </figure>
-
-                            <figure class="image-figure">
-                                <div class="image-wrapper">
-                                    <Image src={searchResultsMobile} alt="Search results mobile" />
-                                </div>
-                                <figcaption>New mobile search results view</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -205,7 +201,7 @@ const tocHeadings = [
                                 <div class="image-wrapper mobile-screen">
                                     <Image src={searchResultsMobile} alt="Search results mobile" />
                                 </div>
-                                <figcaption>New mobile search results view</figcaption>
+                                <figcaption>New search results</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -292,7 +288,9 @@ const tocHeadings = [
                                 <div class="feature-item">
                                     <h3>Multiple options per cabin</h3>
                                     <p>The cabin type clicked within the result is anchored to, but all cabin types are available along with their airline specific terminology for comparison with the airline and other sites.</p>
+                                </div>
 
+                                <div class="feature-item">
                                     <h3>Compare amenities</h3>
                                     <p>Included amenities are clearly shown with symbols, color, and language to convey availability across all cabin types.</p>
                                 </div>
@@ -300,16 +298,16 @@ const tocHeadings = [
                         </div>
 
                         <div class="section-body-image">
-                            <!-- <figure class="image-figure">
-                                <div class="image-wrapper">
-                                    <Image src={fareSelectDesktop} alt="Fare select desktop" />
-                                </div>
-                                <figcaption>Basic cabin type chosen</figcaption>
-                            </figure> -->
-
                             <figure class="image-figure">
                                 <div class="image-wrapper mobile-screen">
                                     <Image src={fareSelectMobile} alt="Fare select mobile" />
+                                </div>
+                                <figcaption>Basic cabin type chosen</figcaption>
+                            </figure>
+
+                            <figure class="image-figure">
+                                <div class="image-wrapper mobile-screen">
+                                    <Image src={fareSelectMobileMain} alt="Fare select mobile" />
                                 </div>
                                 <figcaption>Main cabin type chosen</figcaption>
                             </figure>
@@ -349,184 +347,18 @@ const tocHeadings = [
 </Layout>
 
 <style>
-    .main-content {
-        text-align: left;
-        background: var(--color-background-secondary);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: start;
-    }
-
-    .case-study-layout {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        max-width: 1200px;
-        margin: 0 1.5rem;
-        background: var(--color-background-secondary);
-    }
-
-    .case-study-content {
-        min-width: 0;
-    }
-
-    .case-study-content section {
-        padding: 3rem 0;
-    }
-
-    .case-study-sidebar {
-        position: relative;
-    }
-
-    .callout {
-        padding: 1.5rem;
-        background: var(--color-white);
-        border: 2px solid var(--color-primary);
-        border-radius: var(--radius-lg);
-    }
-
-    .callout-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 1rem;
-    }
-
-    .callout-category {
-        
-    }
-
-    .callout-category h3 {
-
-    }
-
-    .callout-category ul {
-        list-style-type: none;
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
-        padding: 0;
-    }
-
-    .callout-category li {
-        margin-bottom: 0.25rem;
-    }
-
-    .section-header {
-        margin-bottom: 2rem;
-        margin-left: calc(-1 * var(--spacing-xs) - 4px);
-        padding-left: var(--spacing-xs);
-        border-left: 4px solid var(--color-secondary);
-    }
-
-    .section-body {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-
-    .section-body-text {
-
-    }
-
-    .feature-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: var(--spacing-md);
-    }
-
-    .feature-item {
-        /* margin-bottom: var(--spacing-md); */
-    }
-
-    .feature-item p:last-of-type {
-        margin-bottom: 0;
-    }
-
-    .section-body-image {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 2rem;
-        align-items: stretch;
-    }
-
-    .image-figure {
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-        height: 100%;
-    }
-
-    /* .image-figure .image-wrapper {
-        flex: 1;
-        position: relative;
-        overflow: hidden;
-        min-height: 200px;
-    } */
-
-    .image-figure .image-wrapper img,
-    .image-figure .image-wrapper :global(img) {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        display: block;
-    }
-
-    .mobile-screen {
-        max-width: 16rem;
-    }
-
-    .image-figure figcaption {
-        padding: 0.75rem 1rem;
-        font-size: 0.875rem;
-        color: var(--color-text-secondary, #666);
-        text-align: center;
-        flex-shrink: 0;
-    }
-
     /* Section specific styles */
-    .comparing-results .section-body-image {
+    .solution .section-body-image {
         grid-template-columns: 1fr;
     }
-
 
     @media (min-width: 768px) {
-        .main-content {
-            flex-direction: row;
-            align-items: center;
-            padding: 3rem 0;
-        }
-
-        .case-study-layout {
-            gap: 3rem;
-            margin: 0 3rem;
-        }
-
-        .callout-grid {
-            
-        }
-        
-        .section-header {
-            margin-left: calc(-1 * var(--spacing-sm) - 4px);
-            padding-left: var(--spacing-sm);
-        }
-
-        .section-body {
-            gap: var(--spacing-lg);
-            align-items: center;
-        }
-
-        .section-body-text {
-            margin-bottom: var(--spacing-lg);
-        }
-
         /* Section specific styles */
         .project-overview .section-body {
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 3fr 1fr;
         }
 
+            /* Slightly smaller spacing to balance with callout */
         .project-overview .section-body-text {
             margin-bottom: var(--spacing-md);
         }
@@ -539,8 +371,8 @@ const tocHeadings = [
             grid-template-columns: auto;
         }
 
-        .solution .section-body-image {
-            grid-template-columns: 2fr 1fr;
+        .solution .section-header {
+            margin-bottom: var(--spacing-lg);
         }
 
         .comparing-results .section-body {
@@ -560,17 +392,7 @@ const tocHeadings = [
         }
 
         .fare-select .section-body {
-            grid-template-columns: 2fr 1fr;
-        }
-    }
-
-    @media (min-width: 1024px) {
-        .case-study-layout {
-            grid-template-columns: 220px 1fr;
-        }
-
-        .case-study-content > section:first-of-type {
-            padding-top: 2.5rem;
+            grid-template-columns: 1fr 2fr;
         }
     }
 </style>
