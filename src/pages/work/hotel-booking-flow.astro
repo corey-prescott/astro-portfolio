@@ -1,98 +1,398 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import "../../styles/case-study.css";
+import TableOfContents from "../../components/TableOfContents.astro";
+import { Image } from "astro:assets";
+
+// images
+import hotelBookingHero from "../../assets/case-studies/hotel-booking-flow/hotel-booking-hero.png";
+import hotelBookingScreens from "../../assets/case-studies/hotel-booking-flow/hotel-screens.png";
+import hotelBookingScreensOld from "../../assets/case-studies/hotel-booking-flow/hotel-screens-old.png";
+import hotelMapScreensOld from "../../assets/case-studies/hotel-booking-flow/hotel-map-screens-old.png";
+import searchResultsMobileOld from "../../assets/case-studies/hotel-booking-flow/results_mobile_old.png";
+import searchResultsDesktopOld from "../../assets/case-studies/hotel-booking-flow/results_desktop_old.png";
+import searchResultsMobile from "../../assets/case-studies/hotel-booking-flow/results_mobile.png";
+import searchResultsScrolledMobile from "../../assets/case-studies/hotel-booking-flow/results-scrolled_mobile.png";
+import mapViewMobile from "../../assets/case-studies/hotel-booking-flow/map-view_mobile.png";
+import mapViewSelectedMobile from "../../assets/case-studies/hotel-booking-flow/map-view-selected_mobile.png";
+import roomSelectMobile from "../../assets/case-studies/hotel-booking-flow/room-select_mobile.png";
+import roomSelectRoomsMobile from "../../assets/case-studies/hotel-booking-flow/room-select-rooms_mobile.png";
+
+const tocHeadings = [
+  { slug: "project-overview", text: "Project overview", depth: 2 },
+  { slug: "the-need-for-a-redesign", text: "The need for a redesign", depth: 2 },
+  { slug: "solution", text: "Solution", depth: 2 },
+  { slug: "comparing-results", text: "Comparing results", depth: 2 },
+  { slug: "map-view", text: "Map view", depth: 2 },
+  { slug: "room-select", text: "Room select", depth: 2 },
+  { slug: "results", text: "Results", depth: 2 },
+];
 ---
 
-<Layout title="Hotel Booking Flow | My Portfolio" activePage="work">
-  <article class="case-study">
-    <h1>Hotel Booking Flow</h1>
-    <p>A streamlined hotel booking experience that reduces friction and increases conversions.</p>
-    
-    <!-- Project overview -->
-    <h2>Project overview</h2>
+<Layout title="No surprises: Designing a transparent hotel booking flow | My Portfolio" activePage="work">
+<article>
+    <!-- Header -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>No surprises: Designing a transparent hotel booking flow</h1>
+                <p class="company-name">StudentUniverse</p>
+            </div>
 
-    <h3>Booking a hotel online should be simple.</h3>
-    <p>Our existing search and booking flow didn't surface the right information in the right way, leaving users to piece together details on their own. Pricing was a particular pain point, with no clear view of total cost until late in the process.</p>
-    <p>Our goal was to redesign the flow with transparency at its core, surfacing the data users actually need.</p>
+            <div class="hero-image">
+                <Image src={hotelBookingHero} alt="Hero" />
+            </div>
+        </div>
+    </section>
 
-    <h3>My role</h3>
-    <ul>
-        <li>Product Designer</li>
-    </ul>
+    <section class="main-content">
+        <div class="case-study-layout">
+            <aside class="case-study-sidebar">
+                <TableOfContents headings={tocHeadings} />
+            </aside>
 
-    <h3>Team</h3>
-    <ul>
-        <li>Product Manager</li>
-        <li>Front-end Engineer</li>
-    </ul>
+            <div class="case-study-content">
+                <!-- Project overview -->
+                <section class="project-overview" id="project-overview" aria-labelledby="project-overview-heading">
+                    <div class="section-body">
+                        <div class="section-body-text">
+                            <h2 class="section-header" id="project-overview-heading">Project overview</h2>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Booking a hotel online should be simple.</h3>
+                                    <p>Our existing search and booking flow didn't surface the right information in the right way, leaving users to piece together details on their own. Pricing was a particular pain point, with no clear view of total cost until late in the process.</p>
+                                    <p>Our goal was to redesign the flow with transparency at its core, surfacing the data users actually need.</p>
+                                </div>
+                            </div>
+                        </div>
 
-    <h3>Tools</h3>
-    <ul>
-        <li>Adobe Xd</li>
-        <li>Jira</li>
-        <li>Hotjar</li>
-    </ul>
+                        <div class="callout">
+                            <div class="callout-grid">
+                                <div class="callout-category">
+                                    <h3>My role</h3>
+                                    <ul>
+                                        <li>Product Designer</li>
+                                    </ul>
+                                </div>
 
-    <!-- The need for a redesign -->
-    <h2>The need for a redesign</h2>
+                                <div class="callout-category">
+                                    <h3>Team</h3>
+                                    <ul>
+                                        <li>Product Manager</li>
+                                        <li>Front-end Engineer</li>
+                                    </ul>
+                                </div>
 
-    <h3>Business and user needs</h3>
-    <ul>
-        <li><strong>Transparent pricing</strong>, total and nightly rate</li>
-        <li><strong>Student/member deals</strong> called out</li>
-        <li>Show pricing on a more visible <strong>map view</strong></li>
-        <li>Show more <strong>important amenities</strong></li>
-        <li>Improve accessibility of <strong>mobile</strong></li>
-        <li>Call out <strong>free cancellation</strong></li>
-    </ul>
+                                <div class="callout-category">
+                                    <h3>Tools</h3>
+                                    <ul>
+                                        <li>Adobe Xd</li>
+                                        <li>Jira</li>
+                                        <li>Hotjar</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- Solution -->
-    <h2>Solution</h2>
+                <!-- The need for a redesign -->
+                <section class="the-need-for-a-redesign" id="the-need-for-a-redesign" aria-labelledby="the-need-for-a-redesign-heading">
+                    <div class="section-body">
+                        <div class="section-body-text">
+                            <h2 class="section-header" id="the-need-for-a-redesign-heading">The need for a redesign</h2>
 
-    <!-- Comparing results -->
-    <h2>Comparing results</h2>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Unclear and not <strong>transparent pricing</strong></h3>
+                                </div>
 
-    <h3>Map view</h3>
-    <p>Easier map access to compare more hotels at once in the right location.</p>
+                                <div class="feature-item">
+                                    <h3><strong>Student/member deals</strong> not called out</h3>
+                                </div>
 
-    <h3>Compare details</h3>
-    <p>Pricing is larger, more important amenities shown, and unique selling points are called out, allowing for easier decision making earlier in the funnel.</p>
+                                <div class="feature-item">
+                                    <h3>No pricing on <strong>map view</strong></h3>
+                                </div>
 
-    <h3>Total and nightly rates</h3>
-    <p>Total price is now shown as the main price, but still showing the nightly rate. Previously, total price could only be seen during checkout.</p>
+                                <div class="feature-item">
+                                    <h3>Only shows one <strong>amenity</strong></h3>
+                                </div>
 
-    <!-- Map view -->
-    <h2>Map view</h2>
+                                <div class="feature-item">
+                                    <h3><strong>Mobile</strong> is not accessible</h3>
+                                </div>
 
-    <h3>Informative pins</h3>
-    <p>Map pins now show total price and indicate member deals with color and an icon to be more informative and useful.</p>
+                                <div class="feature-item">
+                                    <h3><strong>Free cancellation</strong> not shown</h3>
+                                </div>
+                            </div>
+                        </div>
 
-    <h3>Consistency across views</h3>
-    <p>All of the same information is now shown on the hotel cards, rather than a stripped-down version.</p>
+                        <div class="section-body-image">
+                            <figure class="image-figure">
+                                <div class="image-wrapper desktop-screen">
+                                    <Image src={hotelBookingScreensOld} alt="Old mobile hotel search results" />
+                                </div>
+                                <figcaption>Curent mobile search results</figcaption>
+                            </figure>
 
-    <!-- Room select -->
-    <h2>Room select</h2>
+                            <figure class="image-figure">
+                                <div class="image-wrapper desktop-screen">
+                                    <Image src={hotelMapScreensOld} alt="Old desktop hotel search results" />
+                                </div>
+                                <figcaption>Curent map view</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
 
-    <h3>Expanded hotel details</h3>
-    <p>Each hotel now has a full description, its location, and all amenities shown. Recent reviews and access to more are available through a partnership with TripAdvisor.</p>
+                <!-- Solution -->
+                <section class="solution" id="solution" aria-labelledby="solution-heading">
+                    <h2 class="section-header" id="solution-heading">Solution</h2>
 
-    <h3>Room-specific information</h3>
-    <p>Each room now has its own image, description, and amenities to compare. These had previously only shown room type and price.</p>
+                    <div class="section-body">
+                        <div class="section-body-image">
+                            <figure class="image-figure">
+                                <div class="image-wrapper desktop-screen">
+                                    <Image src={hotelBookingScreens} alt="Hotel booking flow" />
+                                </div>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
 
-    <!-- Results -->
-    <h2>Results</h2>
+                <!-- Comparing results -->
+                <section class="comparing-results" id="comparing-results" aria-labelledby="comparing-results-heading">
+                    <div class="section-body">
+                        <div class="section-body-text">
+                            <h2 class="section-header" id="comparing-results-heading">Comparing results</h2>
 
-    <h3>29% increase in click-through from results to room select</h3>
-    <p>With total pricing, top amenities, and unique deals visible directly in the results, users had enough information to commit to a hotel sooner.</p>
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Map view</h3>
+                                    <p>Easier map access to compare more hotels at once in the right location.</p>
+                                </div>
 
-    <h3>135% increase in sales over the prior year and 46% above our previous pre-COVID record</h3>
-    <p>With consistent pricing and details all the way through checkout, fewer users hit late surprises, leading to more completed bookings.</p>
-  </article>
+                                <div class="feature-item">
+                                    <h3>Compare details</h3>
+                                    <p>Pricing is larger, more important amenities shown, and unique selling points are called out, allowing for easier decision making earlier in the funnel.</p>
+                                </div>
+
+                                <div class="feature-item">
+                                    <h3>Total and nightly rates</h3>
+                                    <p>Total price is now shown as the main price, but still showing the nightly rate. Previously, total price could only be seen during checkout.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-body-image">
+                            <figure class="image-figure">
+                                <div class="image-wrapper mobile-screen">
+                                    <Image src={searchResultsMobile} alt="Search results mobile" />
+                                </div>
+                                <figcaption>New search results</figcaption>
+                            </figure>
+
+                            <figure class="image-figure">
+                                <div class="image-wrapper mobile-screen">
+                                    <Image src={searchResultsScrolledMobile} alt="Scrolling through search results mobile" />
+                                </div>
+                                <figcaption>Scrolling through results</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Map view -->
+                <section class="map-view" id="map-view" aria-labelledby="map-view-heading">
+                    <div class="section-body">
+                        <div class="section-body-text">
+                            <h2 class="section-header" id="map-view">Map view</h2>
+
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Informative pins</h3>
+                                    <p>Map pins now show total price and indicate member deals with color and an icon to be more informative and useful.</p>
+                                </div>
+                                
+                                <div class="feature-item">
+                                    <h3>Consistency across views</h3>
+                                    <p>All of the same information is now shown on the hotel cards, rather than a stripped-down version.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-body-image">
+                            <figure class="image-figure">
+                                <div class="image-wrapper mobile-screen">
+                                    <Image src={mapViewMobile} alt="Hotel search map view" />
+                                </div>
+                                <figcaption>Default map view</figcaption>
+                            </figure>
+
+                            <figure class="image-figure">
+                                <div class="image-wrapper mobile-screen">
+                                    <Image src={mapViewSelectedMobile} alt="Hotel search map view with selected hotel" />
+                                </div>
+                                <figcaption>Hotel selected</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Room select -->
+                <section class="room-select" id="room-select" aria-labelledby="room-select-heading">
+                    <div class="section-body">
+                        <div class="section-body-text">
+                            <h2 class="section-header" id="room-select-heading">Room select</h2>
+
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Expanded hotel details</h3>
+                                    <p>Each hotel now has a full description, its location, and all amenities shown. Recent reviews and access to more are available through a partnership with TripAdvisor.</p>
+                                </div>
+                                
+                                <div class="feature-item">
+                                    <h3>Room-specific information</h3>
+                                    <p>Each room now has its own image, description, and amenities to compare. These had previously only shown room type and price.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="section-body-image">
+                            <figure class="image-figure">
+                                <div class="image-wrapper mobile-screen">
+                                    <Image src={roomSelectMobile} alt="Hotel room select page" />
+                                </div>
+                                <figcaption>Hotel landing page</figcaption>
+                            </figure>
+
+                            <figure class="image-figure">
+                                <div class="image-wrapper mobile-screen">
+                                    <Image src={roomSelectRoomsMobile} alt="Hotel room details" />
+                                </div>
+                                <figcaption>Results anchor to room select on hotel page</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Results -->
+                <section class="results" id="results" aria-labelledby="results-heading">
+                    <div class="section-body">
+                        <div class="section-body-text">
+                            <h2 class="section-header" id="results-heading">Results</h2>
+
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>29% increase in click-through from results to room select</h3>
+                                    <p>With total pricing, top amenities, and unique deals visible directly in the results, users had enough information to commit to a hotel sooner.</p>
+                                </div>
+
+                                <div class="feature-item">
+                                    <h3>+135% sales over the prior year and 46% above our pre-COVID record</h3>
+                                    <p>With consistent pricing and details all the way through checkout, fewer users hit late surprises, leading to more completed bookings.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+</article>
 </Layout>
 
 <style>
-  .case-study {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2rem 0;
-  }
+    /* Section specific styles */
+    .the-need-for-a-redesign .feature-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm) var(--spacing-lg);
+    }
+
+    .the-need-for-a-redesign .feature-grid h3 {
+        font-size: var(--font-size-lg);
+        font-weight: 300;
+    }
+
+    .the-need-for-a-redesign .feature-grid h3 strong {
+        font-weight: 600;
+    }
+
+    .the-need-for-a-redesign .section-body-image {
+        grid-template-columns: 1fr;
+    }
+
+    .solution .section-body-image {
+        grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+        /* Section specific styles */
+        .project-overview .section-body {
+            grid-template-columns: 3fr 1fr;
+        }
+
+            /* Slightly smaller spacing to balance with callout */
+        .project-overview .section-body-text {
+            margin-bottom: var(--spacing-md);
+        }
+
+        .the-need-for-a-redesign .section-body {
+            grid-template-columns: 1fr;
+        }
+        
+        .the-need-for-a-redesign .section-body-text {
+            margin-bottom: 0;
+        }
+
+        .the-need-for-a-redesign .feature-grid {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--spacing-sm) var(--spacing-lg);
+        }
+
+        .the-need-for-a-redesign .section-body-image {
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .the-need-for-a-redesign .image-figure {
+            justify-content: center;
+        }
+
+        .solution {
+            padding-bottom: var(--spacing-2xl);
+        }
+
+        .solution .section-body {
+            grid-template-columns: auto;
+        }
+
+        .solution .section-header {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .comparing-results .section-body {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .map-view .section-body {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .room-select .section-body {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .results .feature-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+    }
+
+@media (min-width: 1024px) {
+    .the-need-for-a-redesign .feature-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
 </style>
