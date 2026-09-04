@@ -5,8 +5,18 @@ import TableOfContents from "../../components/TableOfContents.astro";
 import { Image } from "astro:assets";
 
 // images
+import hotelBookingHero from "../../assets/case-studies/hotel-booking-flow/hotel-booking-hero.png";
 import hotelBookingScreens from "../../assets/case-studies/hotel-booking-flow/hotel-screens.png";
-import searchResultsOld from "../../assets/case-studies/hotel-booking-flow/results_desktop_old.png";
+import hotelBookingScreensOld from "../../assets/case-studies/hotel-booking-flow/hotel-screens-old.png";
+import hotelMapScreensOld from "../../assets/case-studies/hotel-booking-flow/hotel-map-screens-old.png";
+import searchResultsMobileOld from "../../assets/case-studies/hotel-booking-flow/results_mobile_old.png";
+import searchResultsDesktopOld from "../../assets/case-studies/hotel-booking-flow/results_desktop_old.png";
+import searchResultsMobile from "../../assets/case-studies/hotel-booking-flow/results_mobile.png";
+import searchResultsScrolledMobile from "../../assets/case-studies/hotel-booking-flow/results-scrolled_mobile.png";
+import mapViewMobile from "../../assets/case-studies/hotel-booking-flow/map-view_mobile.png";
+import mapViewSelectedMobile from "../../assets/case-studies/hotel-booking-flow/map-view-selected_mobile.png";
+import roomSelectMobile from "../../assets/case-studies/hotel-booking-flow/room-select_mobile.png";
+import roomSelectRoomsMobile from "../../assets/case-studies/hotel-booking-flow/room-select-rooms_mobile.png";
 
 const tocHeadings = [
   { slug: "project-overview", text: "Project overview", depth: 2 },
@@ -19,18 +29,18 @@ const tocHeadings = [
 ];
 ---
 
-<Layout title="A streamlined hotel booking experience that reduces friction and increases conversions. | My Portfolio" activePage="work">
+<Layout title="No surprises: Designing a transparent hotel booking flow | My Portfolio" activePage="work">
 <article>
     <!-- Header -->
     <section class="hero">
         <div class="hero-content">
             <div class="hero-text">
-                <h1>A streamlined hotel booking experience that reduces friction and increases conversions.</h1>
+                <h1>No surprises: Designing a transparent hotel booking flow</h1>
                 <p class="company-name">StudentUniverse</p>
             </div>
 
             <div class="hero-image">
-                <Image src={hotelBookingScreens} alt="Hero" />
+                <Image src={hotelBookingHero} alt="Hero" />
             </div>
         </div>
     </section>
@@ -92,31 +102,29 @@ const tocHeadings = [
                         <div class="section-body-text">
                             <h2 class="section-header" id="the-need-for-a-redesign-heading">The need for a redesign</h2>
 
-                            <h3>Business and user needs</h3>
-
                             <div class="feature-grid">
                                 <div class="feature-item">
-                                    <p><strong>Transparent pricing</strong>, total and nightly rate</p>
+                                    <h3>Unclear and not <strong>transparent pricing</strong></h3>
                                 </div>
 
                                 <div class="feature-item">
-                                    <p><strong>Student/member deals</strong> called out</p>
+                                    <h3><strong>Student/member deals</strong> not called out</h3>
                                 </div>
 
                                 <div class="feature-item">
-                                    <p>Show pricing on a more visible <strong>map view</strong></p>
+                                    <h3>No pricing on <strong>map view</strong></h3>
                                 </div>
 
                                 <div class="feature-item">
-                                    <p>Show more <strong>important amenities</strong></p>
+                                    <h3>Only shows one <strong>amenity</strong></h3>
                                 </div>
 
                                 <div class="feature-item">
-                                    <p>Improve accessibility of <strong>mobile</strong></p>
+                                    <h3><strong>Mobile</strong> is not accessible</h3>
                                 </div>
 
                                 <div class="feature-item">
-                                    <p>Call out <strong>free cancellation</strong></p>
+                                    <h3><strong>Free cancellation</strong> not shown</h3>
                                 </div>
                             </div>
                         </div>
@@ -124,9 +132,16 @@ const tocHeadings = [
                         <div class="section-body-image">
                             <figure class="image-figure">
                                 <div class="image-wrapper desktop-screen">
-                                    <Image src={searchResultsOld} alt="Old fare select" />
+                                    <Image src={hotelBookingScreensOld} alt="Old mobile hotel search results" />
                                 </div>
-                                <figcaption>Curent search results</figcaption>
+                                <figcaption>Curent mobile search results</figcaption>
+                            </figure>
+
+                            <figure class="image-figure">
+                                <div class="image-wrapper desktop-screen">
+                                    <Image src={hotelMapScreensOld} alt="Old desktop hotel search results" />
+                                </div>
+                                <figcaption>Curent map view</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -140,7 +155,7 @@ const tocHeadings = [
                         <div class="section-body-image">
                             <figure class="image-figure">
                                 <div class="image-wrapper desktop-screen">
-                                    <!-- <Image src={} alt="Flight search results" /> -->
+                                    <Image src={hotelBookingScreens} alt="Hotel booking flow" />
                                 </div>
                             </figure>
                         </div>
@@ -174,9 +189,16 @@ const tocHeadings = [
                         <div class="section-body-image">
                             <figure class="image-figure">
                                 <div class="image-wrapper mobile-screen">
-                                    <!-- <Image src={searchResultsMobile} alt="Search results mobile" /> -->
+                                    <Image src={searchResultsMobile} alt="Search results mobile" />
                                 </div>
                                 <figcaption>New search results</figcaption>
+                            </figure>
+
+                            <figure class="image-figure">
+                                <div class="image-wrapper mobile-screen">
+                                    <Image src={searchResultsScrolledMobile} alt="Scrolling through search results mobile" />
+                                </div>
+                                <figcaption>Scrolling through results</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -204,16 +226,16 @@ const tocHeadings = [
                         <div class="section-body-image">
                             <figure class="image-figure">
                                 <div class="image-wrapper mobile-screen">
-                                    <!-- <Image src={resultsV2VLoggedOut} alt="Verify to view results logged out" /> -->
+                                    <Image src={mapViewMobile} alt="Hotel search map view" />
                                 </div>
-                                <figcaption>Logged out</figcaption>
+                                <figcaption>Default map view</figcaption>
                             </figure>
 
                             <figure class="image-figure">
                                 <div class="image-wrapper mobile-screen">
-                                    <!-- <Image src={resultsV2VLoggedIn} alt="Verify to view results logged in" /> -->
+                                    <Image src={mapViewSelectedMobile} alt="Hotel search map view with selected hotel" />
                                 </div>
-                                <figcaption>Logged in</figcaption>
+                                <figcaption>Hotel selected</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -239,25 +261,18 @@ const tocHeadings = [
                         </div>
 
                         <div class="section-body-image">
-                            <!-- <figure class="image-figure">
-                                <div class="image-wrapper">
-                                    <Image src={itineraryDesktop} alt="Itinerary desktop" />
-                                </div>
-                                <figcaption>One-way flight</figcaption>
-                            </figure> -->
-
                             <figure class="image-figure">
                                 <div class="image-wrapper mobile-screen">
-                                    <!-- <Image src={itineraryMobile} alt="Itinerary mobile" /> -->
+                                    <Image src={roomSelectMobile} alt="Hotel room select page" />
                                 </div>
-                                <figcaption>One-way flight</figcaption>
+                                <figcaption>Hotel landing page</figcaption>
                             </figure>
 
                             <figure class="image-figure">
                                 <div class="image-wrapper mobile-screen">
-                                    <!-- <Image src={itineraryRoundtripMobile} alt="Itinerary roudntrip mobile" /> -->
+                                    <Image src={roomSelectRoomsMobile} alt="Hotel room details" />
                                 </div>
-                                <figcaption>Roundtrip flight</figcaption>
+                                <figcaption>Results anchor to room select on hotel page</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -276,7 +291,7 @@ const tocHeadings = [
                                 </div>
 
                                 <div class="feature-item">
-                                    <h3>135% increase in sales over the prior year and 46% above our previous pre-COVID record</h3>
+                                    <h3>+135% sales over the prior year and 46% above our pre-COVID record</h3>
                                     <p>With consistent pricing and details all the way through checkout, fewer users hit late surprises, leading to more completed bookings.</p>
                                 </div>
                             </div>
@@ -291,6 +306,24 @@ const tocHeadings = [
 
 <style>
     /* Section specific styles */
+    .the-need-for-a-redesign .feature-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm) var(--spacing-lg);
+    }
+
+    .the-need-for-a-redesign .feature-grid h3 {
+        font-size: var(--font-size-lg);
+        font-weight: 300;
+    }
+
+    .the-need-for-a-redesign .feature-grid h3 strong {
+        font-weight: 600;
+    }
+
+    .the-need-for-a-redesign .section-body-image {
+        grid-template-columns: 1fr;
+    }
+
     .solution .section-body-image {
         grid-template-columns: 1fr;
     }
@@ -307,7 +340,29 @@ const tocHeadings = [
         }
 
         .the-need-for-a-redesign .section-body {
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
+        }
+        
+        .the-need-for-a-redesign .section-body-text {
+            margin-bottom: 0;
+        }
+
+        .the-need-for-a-redesign .feature-grid {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--spacing-sm) var(--spacing-lg);
+        }
+
+        .the-need-for-a-redesign .section-body-image {
+            grid-template-columns: 1fr 1fr;
+            gap: var(--spacing-lg);
+        }
+
+        .the-need-for-a-redesign .image-figure {
+            justify-content: center;
+        }
+
+        .solution {
+            padding-bottom: var(--spacing-2xl);
         }
 
         .solution .section-body {
@@ -319,23 +374,25 @@ const tocHeadings = [
         }
 
         .comparing-results .section-body {
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1fr 2fr;
         }
 
-        .comparing-results .feature-grid {
+        .map-view .section-body {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .room-select .section-body {
+            grid-template-columns: 1fr 2fr;
+        }
+
+        .results .feature-grid {
             grid-template-columns: 1fr 1fr;
         }
-
-        .exclusive-pricing .section-body {
-            grid-template-columns: 1fr 2fr;
-        }
-
-        .flight-details .section-body {
-            grid-template-columns: 1fr 2fr;
-        }
-
-        .fare-select .section-body {
-            grid-template-columns: 1fr 2fr;
-        }
     }
+
+@media (min-width: 1024px) {
+    .the-need-for-a-redesign .feature-grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
 </style>

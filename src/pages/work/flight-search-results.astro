@@ -5,6 +5,7 @@ import TableOfContents from "../../components/TableOfContents.astro";
 import { Image } from "astro:assets";
 
 // images
+import flightSearchHero from "../../assets/case-studies/flight-search-results/flight-search-hero.png";
 import flightSearchScreens from "../../assets/case-studies/flight-search-results/flight-screens.png";
 import searchResultsOld from "../../assets/case-studies/flight-search-results/search-results_desktop_old.png";
 import searchResultsMobile from "../../assets/case-studies/flight-search-results/results_mobile.png"
@@ -38,7 +39,7 @@ const tocHeadings = [
             </div>
 
             <div class="hero-image">
-                <Image src={flightSearchScreens} alt="Hero" />
+                <Image src={flightSearchHero} alt="Hero" />
             </div>
         </div>
     </section>
@@ -101,9 +102,9 @@ const tocHeadings = [
                         <div class="section-body-text">
                             <h2 class="section-header" id="the-need-for-a-redesign-heading">The need for a redesign</h2>
 
-                            <h3>Business and user needs</h3>
+                            <!-- <h3>Business and user needs</h3> -->
 
-                            <div class="feature-grid">
+                            <!-- <div class="feature-grid">
                                 <div class="feature-item">
                                     <p>Multiple distinguished <strong>cabin types</strong></p>
                                 </div>
@@ -131,6 +132,36 @@ const tocHeadings = [
                                 <div class="feature-item">
                                     <p><strong>Marketing and promotions</strong> play a major role in sales</p>
                                 </div>
+                            </div> -->
+
+                            <div class="feature-grid">
+                                <div class="feature-item">
+                                    <h3>Only showing one <strong>cabin type</strong></h3>
+                                </div>
+
+                                <div class="feature-item">
+                                    <h3><strong>Student rates</strong> not called out</h3>
+                                </div>
+
+                                <div class="feature-item">
+                                    <h3>Hard to see <strong>our value</strong></h3>
+                                </div>
+
+                                <div class="feature-item">
+                                    <h3><strong>Mobile</strong> is not user-friendly or accessible</h3>
+                                </div>
+
+                                <div class="feature-item">
+                                    <h3><strong>Amenities</strong> are not shown</h3>
+                                </div>
+
+                                <div class="feature-item">
+                                    <h3>Hard to <strong>compare to other sites</strong></h3>
+                                </div>
+
+                                <div class="feature-item">
+                                    <h3><strong>Marketing and promotions</strong> not shown</h3>
+                                </div>
                             </div>
                         </div>
 
@@ -139,7 +170,7 @@ const tocHeadings = [
                                 <div class="image-wrapper desktop-screen">
                                     <Image src={searchResultsOld} alt="Old fare select" />
                                 </div>
-                                <figcaption>Curent search results</figcaption>
+                                <figcaption>Curent search results (No access to mobile screens)</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -348,6 +379,20 @@ const tocHeadings = [
 
 <style>
     /* Section specific styles */
+    .the-need-for-a-redesign .feature-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-sm) var(--spacing-lg);
+    }
+
+    .the-need-for-a-redesign .feature-grid h3 {
+        font-size: var(--font-size-lg);
+        font-weight: 300;
+    }
+
+    .the-need-for-a-redesign .feature-grid h3 strong {
+        font-weight: 600;
+    }
+
     .solution .section-body-image {
         grid-template-columns: 1fr;
     }
@@ -364,7 +409,20 @@ const tocHeadings = [
         }
 
         .the-need-for-a-redesign .section-body {
-            grid-template-columns: 1fr 2fr;
+            grid-template-columns: 1fr;
+        }
+        
+        .the-need-for-a-redesign .section-body-text {
+            margin-bottom: 0;
+        }
+
+        .the-need-for-a-redesign .feature-grid {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: var(--spacing-sm) var(--spacing-lg);
+        }
+
+        .solution {
+            padding-bottom: var(--spacing-2xl);
         }
 
         .solution .section-body {
@@ -393,6 +451,10 @@ const tocHeadings = [
 
         .fare-select .section-body {
             grid-template-columns: 1fr 2fr;
+        }
+
+        .results .feature-grid {
+            grid-template-columns: 1fr 1fr;
         }
     }
 </style>

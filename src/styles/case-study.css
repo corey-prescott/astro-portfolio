@@ -1,5 +1,21 @@
+.hero {
+    padding-bottom: 0;
+}
+
+.hero-text {
+    height: fit-content;
+    align-self: center;
+}
+
 .hero-text h1 {
     margin-bottom: var(--spacing-xs);
+}
+
+.hero-image {
+    display: grid;
+    max-width: 66.66%;
+    justify-self: center;
+    align-items: end;
 }
 
 .company-name {
@@ -50,14 +66,6 @@
     gap: var(--spacing-sm);
 }
 
-.callout-category {
-    
-}
-
-.callout-category h3 {
-
-}
-
 .callout-category ul {
     list-style-type: none;
     margin-top: var(--spacing-xs);
@@ -73,10 +81,6 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
-}
-
-.section-body-text {
-
 }
 
 .feature-grid {
@@ -101,7 +105,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     overflow: hidden;
     height: 100%;
@@ -128,6 +132,25 @@
 }
 
 @media (min-width: 768px) {
+    .hero {
+        padding-top: var(--spacing-lg);
+    }
+
+    .hero-content {
+        grid-template-columns: 2fr 3fr;
+        gap: var(--spacing-lg);
+    }
+
+    .hero-text {
+        order: 2;
+        padding-bottom: var(--spacing-lg);
+    }
+
+    .hero-image {
+        order: 1;
+        max-width: none;
+    }
+
     .main-content {
         flex-direction: row;
         align-items: center;
@@ -151,20 +174,31 @@
     .section-body-text {
         margin-bottom: var(--spacing-lg);
     }
-
-    .section-body-image {
-        gap: 0;
-    }
 }
 
 @media (min-width: 1024px) {
+    .hero {
+        padding-top: var(--spacing-xl);
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr 4fr;
+    }
+
+    .hero-text {
+        padding-bottom: var(--spacing-xl);
+    }
+
     .case-study-layout {
-        grid-template-columns: 220px 1fr;
+        grid-template-columns: 1fr 4fr;
     }
 
     .case-study-content > section:first-of-type {
         padding-top: 2.5rem;
     }
+}
+
+@media (min-width: 1310px) {
 }
 
 @media (min-width: 1920px) {

@@ -172,6 +172,11 @@ a:hover {
   color: var(--color-primary-hover);
 }
 
+figcaption {
+    line-height: 1.2;
+    text-wrap: balance;
+}
+
 /*  Images  */
 img {
   max-width: 100%;
@@ -195,32 +200,21 @@ ul, ol {
 .hero {
     text-align: left;
     background: var(--color-background-primary);
-    padding: var(--spacing-xl) 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    gap: 2rem;
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-xl);
 }
 
 .hero-content {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: var(--spacing-md);
     max-width: 1200px;
     margin: 0 var(--spacing-md);
 }
-
-.hero-text {
-    max-width: 800px;
-}
-
-  /* .hero h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--color-text-primary);
-  } */
 
 .hero h2 {
     font-size: var(--font-size-xl);
@@ -251,7 +245,6 @@ ul, ol {
 
     .hero {
         flex-direction: row;
-        text-align: left;
         align-items: center;
         gap: var(--spacing-xl);
         padding: var(--spacing-2xl) 0;
@@ -259,13 +252,12 @@ ul, ol {
 
     .hero-content {
         flex: 1;
-        gap: var(--spacing-md);
         margin: 0 var(--spacing-lg);
     }
 
     .hero-image {
-      flex: 1;
-      max-width: 400px;
+        max-width: 400px;
+        justify-self: end;
     }
         
     .section-header {
@@ -276,15 +268,7 @@ ul, ol {
 
   /* === Desktop (min-width: 1024px) === */
   @media (min-width: 1024px) {
-    .hero {
-    }
-
-    .hero-content {
-        flex-direction: row;
-        align-items: center;
-    }
-
     .hero-image {
-      max-width: 500px;
+        max-width: 500px;
     }
   }
