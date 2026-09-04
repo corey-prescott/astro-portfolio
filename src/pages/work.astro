@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
-import CTAButton from "../components/CTAButton.astro";
+// Components
 import Card from "../components/Card.astro";
 
 // images
@@ -10,20 +10,20 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
 ---
 
 <Layout title="Work | Corey Prescott" activePage="work">
-  <!-- Hero section -->
-  <section class="hero">
+<!-- Hero section -->
+<section class="hero">
     <div class="hero-content">
         <div class="hero-text">
             <h1>Work</h1>
             <p>I've been designing for the web for over 14 years, with the last 4 focused on product and UX. Much of that time has been spent working closely with development, figuring out where the real edges of an idea are and pushing a little past them.</p>
         </div>
     </div>
-  </section>
+</section>
 
-  <!-- Case studies section -->
-  <section class="case-studies-preview">
+<!-- Case studies section -->
+<section class="case-studies-preview">
     <div class="case-studies-content">
-        <h2>Case studies</h2>
+        <h2 class="section-header">Case studies</h2>
         <div class="card-grid">
         <!-- Card 1 -->
         <Card
@@ -44,12 +44,12 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
         />
         </div>
     </div>
-  </section>
+</section>
 </Layout>
 
 <style>
-  /* About preview */
-  .case-studies-preview {
+/* About preview */
+.case-studies-preview {
     padding: 3rem 0;
     text-align: left;
     background: var(--color-background-secondary);
@@ -57,23 +57,23 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
     flex-direction: column;
     justify-content: center;
     align-items: start;
-  }
+}
 
-  .case-studies-content {
+.case-studies-content {
         max-width: 1200px;
         margin: 0 1.5rem;
-    }
+}
 
-  /* Card component */
-  .card-grid {
+/* Card component */
+.card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
     padding: 1.5rem 0;
-  }
+}
 
-  /* === Tablet and desktop (min-width: 768px) === */
-  @media (min-width: 768px) {
+/* === Tablet and desktop (min-width: 768px) === */
+@media (min-width: 768px) {
     .project-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -88,10 +88,10 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
         flex: 1;
         margin: 0 3rem;
     }
-  }
+}
 
-  /* === Desktop (min-width: 1024px) === */
-  @media (min-width: 1024px) {
-    
-  }
+/* === Desktop (min-width: 1024px) === */
+@media (min-width: 1024px) {
+
+}
 </style>

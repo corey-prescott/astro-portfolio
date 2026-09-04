@@ -1,144 +1,62 @@
 ---
 import Layout from "../layouts/Layout.astro";
-
-import CTAButton from "../components/CTAButton.astro";
-import Card from "../components/Card.astro";
-
-// images
-import flightSearchImage from "../assets/case-studies/flight-search-results/flight-search-results-card.png";
-import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-booking-flow-card.png";
 ---
 
-<Layout title="About | Corey Prescott" activePage="about">
-  <!-- Hero section -->
-  <section class="hero">
+<Layout title="About me | Corey Prescott" activePage="about">
+<!-- Hero section -->
+<section class="hero">
     <div class="hero-content">
-        <h1>About</h1>
+        <div class="hero-text">
+            <h1>About me</h1>
+        </div>
+    </div>
+</section>
+
+<!-- About me section -->
+<section class="about-me">
+    <div class="about-content">
+        <h2 class="section-header">Hi, I'm Corey 👋</h2>
         <p>I'm a Product Designer with over 14 years designing and building for the web, the last 4 focused specifically on product and UX. I care about designing experiences people can trust, where the information they need is upfront, not buried.</p>
 
         <p>Much of my time in product design has been spent working closely with development, figuring out where the real edges of an idea are and pushing a little past them.</p>
 
         <p>My background is primarily in travel and e-commerce, but I'm looking to bring that same approach, transparency, trust, and close collaboration with engineering, to new industries.</p>
     </div>
-  </section>
+</section>
 </Layout>
 
 <style>
-  /* Hero section */
-  .hero {
-    padding: 0 1.5rem;
+/* About me */
+.about-me {
+    padding: var(--spacing-lg) 0;
     text-align: left;
-    background: var(--color-background-primary);
-    height: 66vh;
-    min-height: 340px;
-    max-height: 500px;
+    background: var(--color-background-secondary);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: start;
-    gap: 2rem;
-  }
+}
 
-  /* .hero h1 {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-    color: var(--color-text-primary);
-  } */
+.about-content {
+    max-width: 1200px;
+    margin: 0 var(--spacing-md);
+}
 
-  .hero h2 {
-    font-size: var(--font-size-xl);
-    font-weight: 500;
-    /* margin-bottom: var(--spacing-lg); */
-  }
+.about-me p {
+    max-width: 40em;
+}
 
-  .hero p {
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-  }
-
-  /* About preview */
-  .about-preview, .case-studies-preview {
-    padding: 3rem 1rem;
-    text-align: left;
-    background: var(--color-background-secondary);
-  }
-
-  /* .about-preview h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  } */
-
-  /* .about-preview p {
-    color: var(--color-text-primary);
-    margin-bottom: 1rem;
-  } */
-
-  /* .about-preview a {
-    color: var(--color-link);
-    text-decoration: none;
-    font-weight: 600;
-  } */
-
-  /* .view-all {
-    color: var(--color-link);
-    text-decoration: none;
-    font-weight: 600;
-  } */
-
-  /* Card component */
-  .card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-  }
-
-  /* === Tablet and desktop (min-width: 768px) === */
-  @media (min-width: 768px) {
-    .hero {
-      flex-direction: row;
-      text-align: left;
-      padding: 0 3rem;
-      align-items: center;
-      gap: 4rem;
+/* === Tablet and desktop (min-width: 768px) === */
+@media (min-width: 768px) {
+    .about-me {
+        padding: var(--spacing-2xl) 0;
+        flex-direction: row;
+        align-items: center;
     }
 
-    .hero-content {
-      flex: 1;
+    .about-content {
+        flex: 1;
+        margin: 0 var(--spacing-lg);
     }
-
-    .hero-image {
-      flex: 1;
-      max-width: 400px;
-    }
-
-    /* .hero h1 {
-      font-size: 3.5rem;
-    } */
-
-    .project-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    .about-preview, .case-studies-preview {
-      padding: 4rem 3rem;
-    }
-  }
-
-  /* === Desktop (min-width: 1024px) === */
-  @media (min-width: 1024px) {
-    .hero {
-      padding: 0 3rem;
-    }
-
-    .hero-image {
-      max-width: 500px;
-    }
-  }
+}
 </style>

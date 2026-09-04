@@ -1,17 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 
+// Components
 import CTAButton from "../components/CTAButton.astro";
 import Card from "../components/Card.astro";
 
 // images
-import flightSearchImage from "../assets/case-studies/flight-search-results/flight-search-results-card.png";
-import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-booking-flow-card.png";
+import flightSearchImage from "../assets/case-studies/flight-search-results/flight-screens.png";
+import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-screens.png";
+import { componentIsHTMLElement } from "astro/runtime/server/render/dom.js";
 ---
 
 <Layout title="Home | Corey Prescott" activePage="home">
-  <!-- Hero section -->
-  <section class="hero">
+<!-- Hero section -->
+<section class="hero">
     <div class="hero-content">
         <div class="hero-text">
             <h1>Corey Prescott</h1>
@@ -20,10 +22,10 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
             <CTAButton text="View my work" href="/work" size="md" variant="outline" />
         </div>
     </div>
-  </section>
+</section>
 
-  <!-- Case studies section -->
-  <section class="case-studies-preview">
+<!-- Case studies section -->
+<section class="case-studies-preview">
     <div class="case-studies-content">
         <h2 class="section-header">Case studies</h2>
         <div class="card-grid">
@@ -46,21 +48,21 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
         />
         </div>
     </div>
-  </section>
+</section>
 
-  <!-- About preview section -->
-  <section class="about-preview">
+<!-- About preview section -->
+<!-- <section class="about-preview">
     <div class="about-content">
         <h2 class="section-header">About me</h2>
         <p>I've been designing for the web for over 14 years, with the last 4 focused on product and UX. Much of that time has been spent working closely with development, figuring out where the real edges of an idea are and pushing a little past them.</p>
         <a href="/about">Learn more →</a>
     </div>
-  </section>
+</section> -->
 </Layout>
 
 <style>
-  /* About preview */
-  .case-studies-preview, .about-preview {
+/* About preview */
+.case-studies-preview, .about-preview {
     padding: var(--spacing-lg) 0;
     text-align: left;
     background: var(--color-background-secondary);
@@ -68,63 +70,41 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
     flex-direction: column;
     justify-content: center;
     align-items: start;
-  }
+}
 
-  .case-studies-content, .about-content {
-        max-width: 1200px;
-        margin: 0 var(--spacing-md);
-    }
+.case-studies-content, .about-content {
+    max-width: 1200px;
+    margin: 0 var(--spacing-md);
+}
 
-  /* .about-preview h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  } */
-
-  /* .about-preview p {
-    color: var(--color-text-primary);
-    margin-bottom: 1rem;
-  } */
-
-  /* .about-preview a {
-    color: var(--color-link);
-    text-decoration: none;
-    font-weight: 600;
-  } */
-
-  /* .view-all {
-    color: var(--color-link);
-    text-decoration: none;
-    font-weight: 600;
-  } */
-
-  /* Card component */
-  .card-grid {
+/* Card component */
+.card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: var(--spacing-md);
     padding-bottom: var(--spacing-xs);
-  }
+}
 
-  /* === Tablet and desktop (min-width: 768px) === */
-  @media (min-width: 768px) {
+/* === Tablet and desktop (min-width: 768px) === */
+@media (min-width: 768px) {
     .project-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
     .case-studies-preview, .about-preview {
-      padding: var(--spacing-2xl) 0;
-      flex-direction: row;
-      align-items: center;
+    padding: var(--spacing-2xl) 0;
+    flex-direction: row;
+    align-items: center;
     }
 
     .case-studies-content, .about-content {
         flex: 1;
         margin: 0 var(--spacing-lg);
     }
-  }
+}
 
-  /* === Desktop (min-width: 1024px) === */
-  @media (min-width: 1024px) {
-    
-  }
+/* === Desktop (min-width: 1024px) === */
+@media (min-width: 1024px) {
+
+}
 </style>
