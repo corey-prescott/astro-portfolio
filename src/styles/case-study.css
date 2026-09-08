@@ -11,6 +11,10 @@
     margin-bottom: var(--spacing-xs);
 }
 
+.hero p:last-of-type {
+    margin-bottom: var(--spacing-sm);
+}
+
 .hero-image {
     display: grid;
     max-width: 66.66%;

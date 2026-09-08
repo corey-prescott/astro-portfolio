@@ -15,7 +15,8 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
     <div class="hero-content">
         <div class="hero-text">
             <h1>Work</h1>
-            <p>I've been designing for the web for over 14 years, with the last 4 focused on product and UX. Much of that time has been spent working closely with development, figuring out where the real edges of an idea are and pushing a little past them.</p>
+
+            <p>I've been designing for the web for over 14 years, with the last 4 focused on UX. Here are some of the projects I've worked on:</p>
         </div>
     </div>
 </section>
@@ -48,9 +49,12 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
 </Layout>
 
 <style>
-/* About preview */
+.hero-content {
+    max-width: 640px;
+}
+
 .case-studies-preview {
-    padding: 3rem 0;
+    padding: var(--spacing-lg) 0;
     text-align: left;
     background: var(--color-background-secondary);
     display: flex;
@@ -60,16 +64,16 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
 }
 
 .case-studies-content {
-        max-width: 1200px;
-        margin: 0 1.5rem;
+    max-width: 640px;
+    margin: 0 var(--spacing-md);
 }
 
 /* Card component */
 .card-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 1.5rem 0;
+    gap: var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
 }
 
 /* === Tablet and desktop (min-width: 768px) === */
@@ -79,14 +83,14 @@ import hotelBookingImage from "../assets/case-studies/hotel-booking-flow/hotel-b
     }
 
     .case-studies-preview {
-      padding: 4rem 0;
-      flex-direction: row;
-      align-items: center;
+    padding: var(--spacing-2xl) 0;
+    flex-direction: row;
+    align-items: center;
     }
 
     .case-studies-content {
         flex: 1;
-        margin: 0 3rem;
+        margin: 0 var(--spacing-lg);
     }
 }
 

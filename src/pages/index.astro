@@ -15,11 +15,14 @@ import { componentIsHTMLElement } from "astro/runtime/server/render/dom.js";
 <!-- Hero section -->
 <section class="hero">
     <div class="hero-content">
-        <div class="hero-text">
-            <h1>Corey Prescott</h1>
-            <h2>Product Designer</h2>
-            <p>Designing experiences you can trust, where information is upfront, not buried.</p>
-            <CTAButton text="View my work" href="/work" size="md" variant="outline" />
+        <div class="hero-text" aria-label="Hi, I'm Corey Prescott 👋">
+            <h1>Hi, I'm Corey<span class="bye"> Prescott</span> 👋</h1>
+            <p><strong>I'm a Product Designer</strong> with over 14 years designing and building for the web, the last 4 focused specifically on product and UX. I care about designing experiences people can trust, where the information they need is upfront, not buried.</p>
+
+            <p>I've spent most of my career working closely with development. I don't see constraints as something to fight, but an opportunity to find a creative solution and push a little where it gets us something better.</p>
+
+            <p>My background is primarily in travel and e-commerce, but I'm looking to bring that same approach, transparency, trust, and close collaboration with engineering, to new industries.</p>
+            <CTAButton text="View my work" href="#case-studies" size="md" variant="outline" />
         </div>
     </div>
 </section>
@@ -27,7 +30,7 @@ import { componentIsHTMLElement } from "astro/runtime/server/render/dom.js";
 <!-- Case studies section -->
 <section class="case-studies-preview">
     <div class="case-studies-content">
-        <h2 class="section-header">Case studies</h2>
+        <h2 class="section-header" id="case-studies">Case studies</h2>
         <div class="card-grid">
         <!-- Card 1 -->
         <Card
@@ -49,20 +52,14 @@ import { componentIsHTMLElement } from "astro/runtime/server/render/dom.js";
         </div>
     </div>
 </section>
-
-<!-- About preview section -->
-<!-- <section class="about-preview">
-    <div class="about-content">
-        <h2 class="section-header">About me</h2>
-        <p>I've been designing for the web for over 14 years, with the last 4 focused on product and UX. Much of that time has been spent working closely with development, figuring out where the real edges of an idea are and pushing a little past them.</p>
-        <a href="/about">Learn more →</a>
-    </div>
-</section> -->
 </Layout>
 
 <style>
-/* About preview */
-.case-studies-preview, .about-preview {
+.hero-content {
+    max-width: 640px;
+}
+
+.case-studies-preview {
     padding: var(--spacing-lg) 0;
     text-align: left;
     background: var(--color-background-secondary);
@@ -72,8 +69,8 @@ import { componentIsHTMLElement } from "astro/runtime/server/render/dom.js";
     align-items: start;
 }
 
-.case-studies-content, .about-content {
-    max-width: 1200px;
+.case-studies-content {
+    max-width: 640px;
     margin: 0 var(--spacing-md);
 }
 
@@ -91,13 +88,13 @@ import { componentIsHTMLElement } from "astro/runtime/server/render/dom.js";
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .case-studies-preview, .about-preview {
+    .case-studies-preview {
     padding: var(--spacing-2xl) 0;
     flex-direction: row;
     align-items: center;
     }
 
-    .case-studies-content, .about-content {
+    .case-studies-content {
         flex: 1;
         margin: 0 var(--spacing-lg);
     }
