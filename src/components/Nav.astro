@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  activePage?: "home" | "work" | "about";
+  activePage?: "home" | "work";
 }
 
 const { activePage = "home" } = Astro.props;
@@ -9,7 +9,12 @@ const { activePage = "home" } = Astro.props;
 const navLinks = [
   { name: "Home", href: "/", id: "home" },
   { name: "Work", href: "/work", id: "work" },
-  { name: "About", href: "/about", id: "about" },
+  { 
+    name: "LinkedIn", 
+    href: "https://linkedin.com/in/coreyprescott", 
+    id: "linkedin",
+    external: true 
+  },
 ];
 ---
 
@@ -21,6 +26,8 @@ const navLinks = [
         <a 
           href={link.href} 
           class={activePage === link.id ? "nav-link active" : "nav-link"}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
         >
           {link.name}
         </a>
@@ -86,7 +93,7 @@ const navLinks = [
   @media (max-width: 640px) {
     .nav {
       flex-direction: column;
-      gap: 0.5rem;
+      gap: var(--spacing-md);
       padding: 1rem;
     }
 
