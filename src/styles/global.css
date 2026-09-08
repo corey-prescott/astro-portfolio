@@ -192,8 +192,8 @@ ul, ol {
 
 /*  Selection  */
 ::selection {
-  background: var(--color-primary);
-  color: white;
+  background: var(--color-secondary);
+  color: var(--color-text-primary);
 }
 
 /* Hero section */
@@ -223,6 +223,7 @@ ul, ol {
   }
 
 .hero p {
+    max-width: 40em;
     margin-bottom: var(--spacing-md);
 }
 

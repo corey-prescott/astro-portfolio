@@ -13,7 +13,6 @@ const socialLinks = [
   {
     name: "LinkedIn",
     url: "https://linkedin.com/in/coreyprescott",
-    icon: "in",
   },
 ];
 
@@ -31,7 +30,7 @@ const quickLinks = [
     <div class="footer-column footer-brand">
       <h3 class="footer-logo">Corey Prescott</h3>
       <p class="footer-tagline">Product Designer</p>
-      <p class="footer-copyright">&copy; {currentYear} Your Name. All rights reserved.</p>
+      <p class="footer-copyright">&copy; {currentYear} Corey Prescott. All rights reserved.</p>
     </div>
 
     <!-- Column 2: Quick Links -->
@@ -62,7 +61,6 @@ const quickLinks = [
                 class="social-link"
                 aria-label={`Visit my ${social.name} profile`}
               >
-                <span class="social-icon">{social.icon}</span>
                 {social.name}
               </a>
             </li>
@@ -76,10 +74,8 @@ const quickLinks = [
 <style>
   /* === FOOTER STYLES === */
   .footer {
-    background: var(--color-primary-light, #f7f7f7);
-    border-top: 1px solid var(--color-border, #e6e6e6);
-    padding: 3rem 1.5rem 2rem;
-    margin-top: 4rem;
+    background: var(--color-primary);
+    padding: var(--spacing-lg) var(--spacing-md) 2rem;
   }
 
   .footer-content {
@@ -104,18 +100,18 @@ const quickLinks = [
     font-size: 1.25rem;
     font-weight: 700;
     margin: 0;
-    color: var(--color-text-primary, #1a1a1a);
+    color: var(--color-text-inverse);
   }
 
   .footer-tagline {
     font-size: 0.95rem;
-    color: var(--color-text-secondary, #666);
+    color: var(--color-text-inverse);
     margin: 0;
   }
 
   .footer-copyright {
     font-size: 0.8rem;
-    color: var(--color-text-tertiary, #999);
+    color: var(--color-gray-400);
     margin-top: 0.5rem;
   }
 
@@ -123,9 +119,8 @@ const quickLinks = [
   .footer-heading {
     font-size: 0.875rem;
     font-weight: 600;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--color-text-secondary, #666);
+    color: var(--color-secondary);
     margin: 0 0 0.75rem 0;
   }
 
@@ -143,14 +138,14 @@ const quickLinks = [
   .footer-link-list a,
   .footer-social-list a {
     text-decoration: none;
-    color: var(--color-text-secondary, #666);
+    color: var(--color-text-inverse);
     font-size: 0.95rem;
     transition: color 0.2s ease;
   }
 
   .footer-link-list a:hover,
   .footer-social-list a:hover {
-    color: var(--color-primary, #0055ff);
+    color: var(--color-secondary);
   }
 
   /* === Social Links === */
@@ -166,7 +161,7 @@ const quickLinks = [
     justify-content: center;
     width: 1.5rem;
     height: 1.5rem;
-    background: var(--color-primary, #0055ff);
+    background: var(--color-text-inverse);
     color: white;
     border-radius: 50%;
     font-size: 0.7rem;
@@ -175,15 +170,14 @@ const quickLinks = [
   }
 
   .social-link:hover .social-icon {
-    background: var(--color-primary-hover, #003dcc);
-    transform: scale(1.05);
+    background: var(--color-primary-hover);
   }
 
   /* === Responsive === */
   @media (max-width: 768px) {
     .footer-content {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
+      gap: var(--spacing-md);
       text-align: center;
     }
 
@@ -203,7 +197,7 @@ const quickLinks = [
 
   @media (max-width: 480px) {
     .footer {
-      padding: 2rem 1rem 1.5rem;
+      padding: 2rem 1rem var(--spacing-md);
       margin-top: 3rem;
     }
   }
