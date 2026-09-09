@@ -10,15 +10,13 @@ import hotelBookingHero from "../../assets/case-studies/hotel-booking-flow/hotel
 import hotelBookingScreens from "../../assets/case-studies/hotel-booking-flow/hotel-screens.png";
 import hotelBookingScreensOld from "../../assets/case-studies/hotel-booking-flow/hotel-screens-old.png";
 import hotelMapScreensOld from "../../assets/case-studies/hotel-booking-flow/hotel-map-screens-old.png";
-import searchResultsMobileOld from "../../assets/case-studies/hotel-booking-flow/results_mobile_old.png";
-import searchResultsDesktopOld from "../../assets/case-studies/hotel-booking-flow/results_desktop_old.png";
 import searchResultsMobile from "../../assets/case-studies/hotel-booking-flow/results_mobile.png";
 import searchResultsScrolledMobile from "../../assets/case-studies/hotel-booking-flow/results-scrolled_mobile.png";
 import mapViewMobile from "../../assets/case-studies/hotel-booking-flow/map-view_mobile.png";
 import mapViewSelectedMobile from "../../assets/case-studies/hotel-booking-flow/map-view-selected_mobile.png";
 import roomSelectMobile from "../../assets/case-studies/hotel-booking-flow/room-select_mobile.png";
 import roomSelectRoomsMobile from "../../assets/case-studies/hotel-booking-flow/room-select-rooms_mobile.png";
-import { url } from "astro:schema";
+import flightSearchHero from "../../assets/case-studies/flight-search-results/flight-search-hero.png";
 
 const tocHeadings = [
     { slug: "work", text: "← Back to work", depth: 2, url: "/work"},
@@ -301,18 +299,18 @@ const tocHeadings = [
                         </div>
                     </div>
                 </section>
+
+                <CaseStudyFooter 
+                    nextCaseStudy={{
+                    title: "Flight search results",
+                    slug: "flight-search-results",
+                    imageSrc: flightSearchHero.src,
+                    imageAlt: "Flight search results hero image"
+                    }}
+                />
             </div>
         </div>
     </section>
-
-    <CaseStudyFooter 
-        nextCaseStudy={{
-        title: "Hotel booking flow",
-        slug: "hotel-booking-flow",
-        imageSrc: hotelBookingHero.src,
-        imageAlt: "Hotel booking flow hero image"
-        }}
-    />
 </article>
 </Layout>
 

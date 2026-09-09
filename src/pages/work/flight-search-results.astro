@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import "../../styles/case-study.css";
 import TableOfContents from "../../components/TableOfContents.astro";
 import { Image } from "astro:assets";
+import CaseStudyFooter from "../../components/CaseStudyFooter.astro";
 
 // images
 import flightSearchHero from "../../assets/case-studies/flight-search-results/flight-search-hero.png";
@@ -15,6 +16,7 @@ import itineraryMobile from "../../assets/case-studies/flight-search-results/iti
 import itineraryRoundtripMobile from "../../assets/case-studies/flight-search-results/itinerary-roundtrip_mobile.png";
 import resultsV2VLoggedIn from "../../assets/case-studies/flight-search-results/results-v2v-logged-in_mobile.png";
 import resultsV2VLoggedOut from "../../assets/case-studies/flight-search-results/results-v2v-logged-out_mobile.png";
+import hotelBookingHero from "../../assets/case-studies/hotel-booking-flow/hotel-booking-hero.png";
 
 const tocHeadings = [
     { slug: "work", text: "← Back to work", depth: 2, url: "/work"},
@@ -372,6 +374,15 @@ const tocHeadings = [
                         </div>
                     </div>
                 </section>
+                
+                <CaseStudyFooter 
+                    nextCaseStudy={{
+                    title: "Hotel booking flow",
+                    slug: "hotel-booking-flow",
+                    imageSrc: hotelBookingHero.src,
+                    imageAlt: "Hotel booking flow hero image"
+                    }}
+                />
             </div>
         </div>
     </section>
