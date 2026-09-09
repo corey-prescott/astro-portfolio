@@ -3,6 +3,7 @@ export interface Heading {
   slug: string;
   text: string;
   depth: number;
+  url?: string; // Optional: if this is an external page link
 }
 
 export interface Props {
@@ -17,8 +18,11 @@ const { headings, title = "On this page" } = Astro.props;
   <ul class="toc-list">
     {headings.map((heading) => (
       <li class={`toc-item toc-depth-${heading.depth}`}>
-        <a href={`#${heading.slug}`} class="toc-link">
-          {heading.text}
+        <a 
+            href={heading.url || `#${heading.slug}`} 
+            class={`toc-link ${heading.url ? 'toc-link-external' : ''}`}
+            >
+            {heading.text}
         </a>
       </li>
     ))}
@@ -32,7 +36,7 @@ const { headings, title = "On this page" } = Astro.props;
     align-self: start;
     padding: 3rem 0;
     background: transparent;
-    min-width: 200px;
+    width: 240px;
   }
 
   .toc-list {
@@ -81,71 +85,65 @@ const { headings, title = "On this page" } = Astro.props;
     font-weight: 500;
   }
 
+  .toc-link-external {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   /* Responsive */
   @media (max-width: 1023px) {
     .toc {
-        display: none;
-        /* position: relative;
-        top: 0;
-        width: 100%;
-        padding: 1rem;
-        margin-bottom: 1.5rem; */
+      display: none;
     }
-
-    /* .toc-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.25rem 0.5rem;
-    }
-
-    .toc-item {
-        font-size: 0.8rem;
-    }
-
-    .toc-depth-3,
-    .toc-depth-4 {
-        padding-left: 0;
-    } */
   }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const links = document.querySelectorAll(".toc-link");
-    const sections = Array.from(links).map((link) => {
+    // Get all links, but only observe those that are anchor links (not external)
+    const allLinks = document.querySelectorAll(".toc-link");
+    const anchorLinks = Array.from(allLinks).filter(link => {
       const href = link.getAttribute("href");
-      // Check if href exists and is a string
-      if (href) {
-        return document.querySelector(href);
-      }
-      return null;
+      return href && href.startsWith("#");
     });
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            links.forEach((link) => {
-              const href = link.getAttribute("href");
-              if (href === `#${id}`) {
-                link.classList.add("active");
-              } else {
-                link.classList.remove("active");
-              }
-            });
-          }
-        });
-      },
-      {
-        rootMargin: "0px 0px -40% 0px",
-        threshold: 0.1,
-      }
-    );
+    // Only set up Intersection Observer for anchor links
+    if (anchorLinks.length > 0) {
+      const sections = Array.from(anchorLinks).map((link) => {
+        const href = link.getAttribute("href");
+        if (href) {
+          return document.querySelector(href);
+        }
+        return null;
+      });
 
-    // Only observe sections that exist
-    sections.forEach((section) => {
-      if (section) observer.observe(section);
-    });
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              anchorLinks.forEach((link) => {
+                const href = link.getAttribute("href");
+                if (href === `#${id}`) {
+                  link.classList.add("active");
+                } else {
+                  link.classList.remove("active");
+                }
+              });
+            }
+          });
+        },
+        {
+          rootMargin: "0px 0px -40% 0px",
+          threshold: 0.1,
+        }
+      );
+
+      // Only observe sections that exist
+      sections.forEach((section) => {
+        if (section) observer.observe(section);
+      });
+    }
   });
 </script>
