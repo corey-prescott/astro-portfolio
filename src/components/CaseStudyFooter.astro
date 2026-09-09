@@ -1,0 +1,182 @@
+---
+export interface Props {
+  nextCaseStudy?: {
+    title: string;
+    slug: string;
+    imageSrc: string;
+    imageAlt: string;
+  };
+}
+
+const { nextCaseStudy } = Astro.props;
+---
+
+<section class="case-study-section-footer">
+  <div class="section-footer-container">
+    <div class="section-footer-nav">
+      <a href="/work" class="back-to-work">← Back to Work</a>
+      <span class="separator"> | </span>
+      <a href="#top" class="back-to-top">
+        ↑ Back to top
+      </a>
+    </div>
+
+    <div class="section-footer-next">
+      {nextCaseStudy && (
+        <a href={`/work/${nextCaseStudy.slug}`} class="next-link">
+            <div class="next-text">
+                <span class="next-label">Next case study:</span>
+                <span class="next-title">{nextCaseStudy.title}</span>
+            </div>
+            <div class="next-image-wrapper">
+                <img src={nextCaseStudy.imageSrc} alt={nextCaseStudy.imageAlt} />
+            </div>
+        </a>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+    /* ===== SECTION CONTAINER ===== */
+    .case-study-section-footer {
+        padding: var(--spacing-lg) 0;
+        margin-top: var(--spacing-lg);
+        border-top: 1px solid var(--color-border);
+    }
+
+    .section-footer-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    /* ===== LEFT SIDE ===== */
+    .section-footer-nav {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: var(--font-size-sm);
+    }
+
+    .back-to-work {
+        color: var(--color-text-secondary);
+        text-decoration: none;
+        transition: color 0.2s ease;
+        padding: var(--spacing-sm) var(--spacing-sm);
+    }
+
+    .back-to-work:hover {
+        color: var(--color-text-primary);
+    }
+
+    .separator {
+        color: var(--color-border);
+    }
+
+    .back-to-top {
+        color: var(--color-text-secondary);
+        padding: var(--spacing-sm) var(--spacing-sm);
+    }
+
+    .back-to-top:hover {
+        color: var(--color-text-primary);
+    }
+
+    /* ===== RIGHT SIDE ===== */
+    .section-footer-next {
+        flex-shrink: 0;
+    }
+
+    .next-link {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        text-decoration: none;
+        color: var(--color-text-primary);
+        transition: all 0.2s ease;
+    }
+
+    .next-link:hover {
+        color: var(--color-primary);
+    }
+
+    .next-label {
+        font-size: var(--font-size-sm);
+        letter-spacing: 0.05em;
+        color: var(--color-text-secondary);
+        display: block;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .next-title {
+        font-size: var(--font-size-md);
+        font-weight: 500;
+        display: block;
+    }
+
+    .next-image-wrapper {
+        position: relative;
+        width: 4rem;
+        height: 4rem;
+        overflow: hidden;
+        flex-shrink: 0;
+        transition: all 0.2s ease;
+    }
+
+    .next-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .next-link:hover .next-image-wrapper::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    /* ===== HIDE BACK TO WORK AT 1024PX+ ===== */
+    @media (min-width: 1024px) {
+        .back-to-work {
+        display: none;
+        }
+
+        .separator {
+        display: none;
+        }
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+        .section-footer-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.5rem;
+        }
+
+        .section-footer-nav {
+        justify-content: center;
+        }
+
+        .next-link {
+        justify-content: center;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .section-footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        }
+
+        .next-link {
+        flex-wrap: wrap;
+        text-align: center;
+        }
+    }
+</style>

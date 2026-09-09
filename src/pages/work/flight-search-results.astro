@@ -3,6 +3,7 @@ import Layout from "../../layouts/Layout.astro";
 import "../../styles/case-study.css";
 import TableOfContents from "../../components/TableOfContents.astro";
 import { Image } from "astro:assets";
+import CaseStudyFooter from "../../components/CaseStudyFooter.astro";
 
 // images
 import flightSearchHero from "../../assets/case-studies/flight-search-results/flight-search-hero.png";
@@ -15,20 +16,22 @@ import itineraryMobile from "../../assets/case-studies/flight-search-results/iti
 import itineraryRoundtripMobile from "../../assets/case-studies/flight-search-results/itinerary-roundtrip_mobile.png";
 import resultsV2VLoggedIn from "../../assets/case-studies/flight-search-results/results-v2v-logged-in_mobile.png";
 import resultsV2VLoggedOut from "../../assets/case-studies/flight-search-results/results-v2v-logged-out_mobile.png";
+import hotelBookingHero from "../../assets/case-studies/hotel-booking-flow/hotel-booking-hero.png";
 
 const tocHeadings = [
-  { slug: "project-overview", text: "Project overview", depth: 2 },
-  { slug: "the-need-for-a-redesign", text: "The need for a redesign", depth: 2 },
-  { slug: "solution", text: "Solution", depth: 2 },
-  { slug: "comparing-results", text: "Comparing results", depth: 2 },
-  { slug: "exclusive-pricing", text: "Exclusive pricing", depth: 2 },
-  { slug: "flight-details", text: "Flight details", depth: 2 },
-  { slug: "fare-select", text: "Fare select", depth: 2 },
-  { slug: "results", text: "Results", depth: 2 },
+    { slug: "work", text: "← Back to work", depth: 2, url: "/work"},
+    { slug: "project-overview", text: "Project overview", depth: 2 },
+    { slug: "the-need-for-a-redesign", text: "The need for a redesign", depth: 2 },
+    { slug: "solution", text: "Solution", depth: 2 },
+    { slug: "comparing-results", text: "Comparing results", depth: 2 },
+    { slug: "exclusive-pricing", text: "Exclusive pricing", depth: 2 },
+    { slug: "flight-details", text: "Flight details", depth: 2 },
+    { slug: "fare-select", text: "Fare select", depth: 2 },
+    { slug: "results", text: "Results", depth: 2 },
 ];
 ---
 
-<Layout title="Optimizing flight search results for a modern shopping experience | My Portfolio" activePage="work">
+<Layout title="Flight search results redesign: Case study" description="Flight search results redesign for StudentUniverse. I improved mobile usability, exposed cabin types and promotions, and increased conversion by helping users compare faster. View case study." activePage="work">
 <article>
     <!-- Header -->
     <section class="hero">
@@ -170,7 +173,7 @@ const tocHeadings = [
                                 <div class="image-wrapper desktop-screen">
                                     <Image src={searchResultsOld} alt="Old fare select" />
                                 </div>
-                                <figcaption>Curent search results (No access to mobile screens)</figcaption>
+                                <figcaption>Current search results (No access to mobile screens)</figcaption>
                             </figure>
                         </div>
                     </div>
@@ -200,7 +203,7 @@ const tocHeadings = [
                             <div class="feature-grid">
                                 <div class="feature-item">
                                     <h3>Itineraries</h3>
-                                    <p>Stop locations are now exposed instead of behind a click.</p>
+                                    <p>Stop locations are now exposed instead of being hidden behind a click.</p>
                                 </div>
 
                                 <div class="feature-item">
@@ -371,6 +374,15 @@ const tocHeadings = [
                         </div>
                     </div>
                 </section>
+                
+                <CaseStudyFooter 
+                    nextCaseStudy={{
+                    title: "Hotel booking flow",
+                    slug: "hotel-booking-flow",
+                    imageSrc: hotelBookingHero.src,
+                    imageAlt: "Hotel booking flow hero image"
+                    }}
+                />
             </div>
         </div>
     </section>
